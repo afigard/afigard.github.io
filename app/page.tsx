@@ -1,0 +1,93 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./ui/page.module.css";
+
+export default function Home() {
+  return (
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <h1>Adrien Figard</h1>
+          <p>Fullstack Developer in Freelance</p>
+        </div>
+        <nav className={styles.nav}>
+          <Link href="/">Home</Link>
+          <Link href="/education">Education</Link>
+          <Link href="/projects">Projects</Link>
+        </nav>
+      </header>
+
+      <main className={styles.main}>
+        <Image
+          src="/landscape.jpg"
+          width={2880}
+          height={1800}
+          alt="Placeholder illustration"
+        />
+      </main>
+
+      <footer className={styles.footer}>
+        <p>Adrien Figard</p>
+        <ul className={styles.contact}>
+          <li>
+            <Link href="mailto:adrien.figard@gmail.com">
+              <Image
+                className="dark:invert"
+                src="/email-logo.svg"
+                width={30}
+                height={30}
+                alt="Email logo"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://www.malt.fr/profile/adrienfigard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className="dark:invert"
+                src="/malt-logo.svg"
+                width={30}
+                height={30}
+                alt="Malt logo"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://www.linkedin.com/in/adrien-figard/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className="dark:invert"
+                src="/linkedin-logo.svg"
+                width={30}
+                height={30}
+                alt="LinkedIn logo"
+              />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://github.com/afigard"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className="dark:invert"
+                src="/github-logo.svg"
+                width={30}
+                height={30}
+                alt="GitHub logo"
+              />
+            </Link>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  );
+}
