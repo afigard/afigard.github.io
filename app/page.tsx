@@ -2,33 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ui/page.module.css";
+import MacBookAnimation from "./lib/macBookAnimation";
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <h1>Adrien Figard</h1>
-          <p>Fullstack Developer in Freelance</p>
-        </div>
-        <nav className={styles.nav}>
-          <Link href="/">Home</Link>
-          <Link href="/education">Education</Link>
-          <Link href="/projects">Projects</Link>
-        </nav>
-      </header>
-
-      <main className={styles.main}>
-        <Image
-          src="/landscape.jpg"
-          width={2880}
-          height={1800}
-          alt="Placeholder illustration"
-        />
-      </main>
-
       <footer className={styles.footer}>
-        <p>Adrien Figard</p>
+        <h1>Adrien Figard</h1>
         <ul className={styles.contact}>
           <li>
             <Link href="mailto:adrien.figard@gmail.com">
@@ -88,6 +68,10 @@ export default function Home() {
           </li>
         </ul>
       </footer>
+
+      <main className={styles.main}>
+        <MacBookAnimation />
+      </main>
     </div>
   );
 }
