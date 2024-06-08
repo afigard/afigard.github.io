@@ -13,7 +13,7 @@ export default function Home() {
           <li>
             <Link href="mailto:adrien.figard@gmail.com">
               <Image
-                className="dark:invert"
+                className={styles.emailLogo}
                 src="/email-logo.svg"
                 width={30}
                 height={30}
@@ -28,7 +28,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <Image
-                className="dark:invert"
+                className={styles.maltLogo}
                 src="/malt-logo.svg"
                 width={30}
                 height={30}
@@ -43,7 +43,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <Image
-                className="dark:invert"
+                className={styles.linkedinLogo}
                 src="/linkedin-logo.svg"
                 width={30}
                 height={30}
@@ -58,7 +58,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <Image
-                className="dark:invert"
+                className={styles.githubLogo}
                 src="/github-logo.svg"
                 width={30}
                 height={30}

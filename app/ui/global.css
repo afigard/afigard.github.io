@@ -23,14 +23,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 0;
   flex-direction: column;
 }
 
 .mockup {
   display: inline-block;
   position: relative;
-  z-index: 3;
   text-align: center;
   font-size: 0;
   perspective: 2400px;
@@ -55,11 +53,11 @@ body {
 }
 
 .mockup .part.top img:first-of-type {
-  filter: brightness(0.85)
+  filter: brightness(0.85);
 }
 
 .mockup .part.bottom img:last-of-type {
-  filter: brightness(0.5)
+  filter: brightness(0.5);
 }
 
 .mockup .part {
@@ -77,7 +75,6 @@ body {
 .mockup .part .top {
   transform-origin: 50% 0;
   transform: translate3d(0, 0, -11px) rotateX(90deg);
-
 }
 
 .mockup img {
@@ -100,4 +97,15 @@ body {
 .mockup .part .bottom {
   transform-origin: 50% 0;
   transform: translate3d(0, 0, 0) rotateX(90deg);
+}
+
+.message {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  color: #66FF66;
+  font-size: 2em;
+  font-weight: bold;
+  opacity: 0;
+  text-align: left;
 }

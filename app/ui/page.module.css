@@ -10,6 +10,45 @@
     padding: 40px 0;
 }
 
+.mainEducation {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.mainEducation h1 {
+    color: white;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.mainEducation .link {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.mainEducation .link:hover {
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+
+.mainEducation .arrow {
+    color: indianred;
+    font-size: 3em;
+}
+
+.mainEducation .location {
+    color: gray;
+    font-style: italic;
+    font-size: smaller;
+}
+
+.mainEducation .horizontalContentDiv {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .contact {
     list-style-type: none;
     padding: 0;
@@ -18,6 +57,29 @@
 .contact li {
     display: inline-block;
     margin: 10px 10px 0px;
+}
+
+.emailLogo,
+.maltLogo,
+.linkedinLogo,
+.githubLogo {
+    filter: brightness(0) saturate(100%) invert(1);
+}
+
+.emailLogo:hover {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(99%) saturate(1063%) hue-rotate(359deg) brightness(103%) contrast(97%);
+}
+
+.maltLogo:hover {
+    filter: brightness(0) saturate(100%) invert(67%) sepia(70%) saturate(4157%) hue-rotate(323deg) brightness(108%) contrast(114%);
+}
+
+.linkedinLogo:hover {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(73%) saturate(2285%) hue-rotate(180deg) brightness(95%) contrast(101%);
+}
+
+.githubLogo:hover {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(89%) saturate(406%) hue-rotate(82deg) brightness(95%) contrast(89%);
 }
 
 .footer {

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,6 +13,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const MacBookAnimation = () => {
   const macbookRef = useRef(null);
+  const messageRef = useRef(null);
+
+  const scrollToTop = () => {
+    const scrollStep = -window.scrollY / (1000 / 15);
+    const scrollInterval = setInterval(() => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep);
+      } else {
+        clearInterval(scrollInterval);
+      }
+    }, 15);
+  };
 
   useEffect(() => {
     if (!macbookRef.current) return;
@@ -39,7 +52,14 @@ const MacBookAnimation = () => {
         .to(".mockup .part.top .top", {
           transform: "translate3d(0, 10px, -10px) rotateX(0deg) scaleX(0.98)",
           ease: "power2.in",
-        });
+        })
+        .to(
+          messageRef.current,
+          {
+            opacity: 0.95,
+          },
+          "<"
+        );
     }, macbookRef);
 
     return () => ctx.revert();
@@ -80,6 +100,34 @@ const MacBookAnimation = () => {
             className="bottom"
           />
         </div>
+      </div>
+      <div ref={messageRef} className="message">
+        &#x279E;&emsp;
+        <span style={{ color: "aqua" }}> &#126; &nbsp;</span>
+        <span style={{ color: "white", fontWeight: "initial" }}>
+          cd Documents/Git/Portfolio
+        </span>
+        <br />
+        &#x279E;&emsp;
+        <span style={{ color: "aqua" }}> Portfolio </span>
+        <span style={{ color: "blue" }}>git:(</span>
+        <span style={{ color: "red" }}>master</span>
+        <span style={{ color: "blue" }}>) &nbsp;</span>
+        <span style={{ color: "white", fontWeight: "initial" }}>
+          ls
+          <br />
+          <Link href="/education">education</Link>
+          &emsp;
+          <Link href="/projects">projects</Link>
+          &emsp;
+          <button onClick={scrollToTop}>home</button>
+        </span>
+        <br />
+        &#x279E;&emsp;
+        <span style={{ color: "aqua" }}> Portfolio </span>
+        <span style={{ color: "blue" }}>git:(</span>
+        <span style={{ color: "red" }}>master</span>
+        <span style={{ color: "blue" }}>) &nbsp;</span>
       </div>
     </div>
   );
