@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Terminal from "../components/Terminal";
 
 // credits:
 // https://codepen.io/mvaneijgen/embed/KKbVObP?editors=0010?height=450&slug-hash=KKbVObP%3Feditors%3D0010&user=mvaneijgen&tab-bar-color=%23222&name=cp_embed_3#result-box
@@ -102,32 +103,33 @@ const MacBookAnimation = () => {
         </div>
       </div>
       <div ref={messageRef} className="message">
-        &#x279E;&emsp;
-        <span style={{ color: "aqua" }}> &#126; &nbsp;</span>
-        <span style={{ color: "white", fontWeight: "initial" }}>
-          cd Documents/Git/Portfolio
-        </span>
-        <br />
-        &#x279E;&emsp;
-        <span style={{ color: "aqua" }}> Portfolio </span>
-        <span style={{ color: "blue" }}>git:(</span>
-        <span style={{ color: "red" }}>master</span>
-        <span style={{ color: "blue" }}>) &nbsp;</span>
-        <span style={{ color: "white", fontWeight: "initial" }}>
-          ls
+        <Terminal>
+          {/**afficher la date et heure (dynamique) à laquelle l'utilisateur à ouvert la page*/}
+          <span style={{ color: "white", fontWeight: "initial" }}>
+            Last login: Thu Jun 29 00:20:00 on console
+          </span>
           <br />
-          <Link href="/education">education</Link>
-          &emsp;
-          <Link href="/projects">projects</Link>
-          &emsp;
-          <button onClick={scrollToTop}>home</button>
-        </span>
-        <br />
-        &#x279E;&emsp;
-        <span style={{ color: "aqua" }}> Portfolio </span>
-        <span style={{ color: "blue" }}>git:(</span>
-        <span style={{ color: "red" }}>master</span>
-        <span style={{ color: "blue" }}>) &nbsp;</span>
+          <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
+          <span style={{ color: "aqua" }}> &#126; &nbsp;</span>
+          <span style={{ color: "white", fontWeight: "initial" }}>
+            cd Documents/Git/Portfolio
+          </span>
+          <br />
+          <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
+          <span style={{ color: "aqua" }}> Portfolio </span>
+          <span style={{ color: "blue" }}>git:(</span>
+          <span style={{ color: "red" }}>master</span>
+          <span style={{ color: "blue" }}>) &nbsp;</span>
+          <span style={{ color: "white", fontWeight: "initial" }}>
+            ls
+            <br />
+            <Link href="/education">education</Link>
+            &emsp;
+            <Link href="/projects">projects</Link>
+            &emsp;
+            <button onClick={scrollToTop}>home</button>
+          </span>
+        </Terminal>
       </div>
     </div>
   );
