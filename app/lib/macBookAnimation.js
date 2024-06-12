@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Terminal from "../components/Terminal";
@@ -15,6 +15,8 @@ gsap.registerPlugin(ScrollTrigger);
 const MacBookAnimation = () => {
   const macbookRef = useRef(null);
   const messageRef = useRef(null);
+  const [showEducationTerminal, setShowEducationTerminal] = useState(false);
+  const [loginTime, setLoginTime] = useState("");
 
   const scrollToTop = () => {
     const scrollStep = -window.scrollY / (1000 / 15);
@@ -28,6 +30,31 @@ const MacBookAnimation = () => {
   };
 
   useEffect(() => {
+    const now = new Date();
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    const day = days[now.getDay()];
+    const month = months[now.getMonth()];
+    const date = now.getDate();
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
+    const formattedDate = `${day} ${month} ${date} ${hours}:${minutes}:${seconds}`;
+    setLoginTime(formattedDate);
+
     if (!macbookRef.current) return;
 
     const ctx = gsap.context(() => {
@@ -66,6 +93,15 @@ const MacBookAnimation = () => {
     return () => ctx.revert();
   }, []);
 
+  const handleOpenEducationTerminal = (e) => {
+    e.preventDefault();
+    setShowEducationTerminal(true);
+  };
+
+  const handleCloseEducationTerminal = () => {
+    setShowEducationTerminal(false);
+  };
+
   return (
     <div ref={macbookRef} className="macbook">
       <div className="mockup loaded opened">
@@ -103,33 +139,123 @@ const MacBookAnimation = () => {
         </div>
       </div>
       <div ref={messageRef} className="message">
-        <Terminal>
-          {/**afficher la date et heure (dynamique) à laquelle l'utilisateur à ouvert la page*/}
-          <span style={{ color: "white", fontWeight: "initial" }}>
-            Last login: Thu Jun 29 00:20:00 on console
-          </span>
-          <br />
-          <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
-          <span style={{ color: "aqua" }}> &#126; &nbsp;</span>
-          <span style={{ color: "white", fontWeight: "initial" }}>
-            cd Documents/Git/Portfolio
-          </span>
-          <br />
-          <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
-          <span style={{ color: "aqua" }}> Portfolio </span>
-          <span style={{ color: "blue" }}>git:(</span>
-          <span style={{ color: "red" }}>master</span>
-          <span style={{ color: "blue" }}>) &nbsp;</span>
-          <span style={{ color: "white", fontWeight: "initial" }}>
-            ls
+        <div
+          className={`original-terminal ${
+            showEducationTerminal ? "dimmed" : ""
+          }`}
+        >
+          <Terminal title="Terminal" heightInput="500px" widthInput="800px">
+            <span style={{ color: "white", fontWeight: "initial" }}>
+              Last login: {loginTime} on console
+            </span>
             <br />
-            <Link href="/education">education</Link>
-            &emsp;
-            <Link href="/projects">projects</Link>
-            &emsp;
-            <button onClick={scrollToTop}>home</button>
-          </span>
-        </Terminal>
+            <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
+            <span style={{ color: "aqua" }}> &#126; &nbsp;</span>
+            <span style={{ color: "white", fontWeight: "initial" }}>
+              cd Documents/Git/Portfolio
+            </span>
+            <br />
+            <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
+            <span style={{ color: "aqua" }}> Portfolio </span>
+            <span style={{ color: "blue" }}>git:(</span>
+            <span style={{ color: "red" }}>master</span>
+            <span style={{ color: "blue" }}>) &nbsp;</span>
+            <span style={{ color: "white", fontWeight: "initial" }}>
+              ls
+              <br />
+              <br />
+              <Link href="/" onClick={handleOpenEducationTerminal}>
+                education &#x1F393;
+              </Link>
+              <br />
+              <br />
+              <Link href="/projects">projects &#x1F4BB;</Link>
+              <br />
+              <br />
+              <button onClick={scrollToTop}>home &#x1F3E0;</button>
+              <br />
+              <br />
+            </span>
+            <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
+            <span style={{ color: "aqua" }}> Portfolio </span>
+            <span style={{ color: "blue" }}>git:(</span>
+            <span style={{ color: "red" }}>master</span>
+            <span style={{ color: "blue" }}>) &nbsp;</span>
+          </Terminal>
+        </div>
+        {showEducationTerminal && (
+          <div className="educationTerminal">
+            <Terminal
+              title="education.txt"
+              heightInput="600px"
+              widthInput="950px"
+              onClose={handleCloseEducationTerminal}
+            >
+              <span style={{ color: "white", fontWeight: "initial" }}>
+                Sep. 2018 - Jul. 2020
+                <br />2 years of prep classes for the grandes écoles at
+                the&nbsp;
+                <Link
+                  className="textLink"
+                  href="https://www.lycee-buffon.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Lycée Buffon
+                </Link>
+                .
+                <br />
+                <br />
+                Sep. 2020
+                <br />
+                Joined the&nbsp;
+                <Link
+                  className="textLink"
+                  href="https://www.esilv.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ecole Supérieure d&apos;Ingénieurs Léonard de Vinci
+                </Link>
+                &nbsp;(ESILV).
+                <br />
+                <br />
+                Feb. 2021 - Jun. 2021
+                <br />
+                Exchange semester at the&nbsp;
+                <Link
+                  className="textLink"
+                  href="https://www.hanyang.ac.kr/web/eng/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hanyang University
+                </Link>
+                .
+                <br />
+                <br />
+                Aug. 2022 - Jul. 2023
+                <br />
+                Exchange year at the&nbsp;
+                <Link
+                  className="textLink"
+                  href="https://www.ucsc-extension.edu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  UCSC Silicon Valley Extension
+                </Link>
+                .
+                <br />
+                <br />
+                Apr. 2024
+                <br />
+                Graduated with a master&apos;s degree in engineering from the
+                ESILV.
+              </span>
+            </Terminal>
+          </div>
+        )}
       </div>
     </div>
   );

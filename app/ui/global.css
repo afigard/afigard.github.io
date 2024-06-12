@@ -112,3 +112,24 @@ body {
   align-items: center;
   text-align: left;
 }
+
+.original-terminal.dimmed {
+  opacity: 0.33 !important;
+}
+
+.educationTerminal {
+  position: absolute;
+  top: 5%;
+  left: 80%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.textLink {
+  font-weight: bolder;
+}
+
+.textLink:hover {
+  color: cornflowerblue;
+  text-decoration: underline;
+}

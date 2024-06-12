@@ -2,17 +2,20 @@
 import React from "react";
 import styles from "./Terminal.module.css";
 
-const Terminal = ({ children }) => {
+const Terminal = ({ title, heightInput, widthInput, children, onClose }) => {
   return (
-    <div className={styles.terminalContainer}>
+    <div
+      className={styles.terminalContainer}
+      style={{ height: heightInput, width: widthInput }}
+    >
       <div className={styles.terminalHeader}>
         <div className={styles.buttons}>
-          <span className={styles.close}></span>
+          <span className={styles.close} onClick={onClose}></span>
           <span className={styles.minimize}></span>
           <span className={styles.maximize}></span>
         </div>
         <div className={styles.title}>
-          Terminal&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          {title}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         </div>
       </div>
       <div className={styles.terminalBody}>

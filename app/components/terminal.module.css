@@ -1,6 +1,4 @@
 .terminalContainer {
-    width: 800px;
-    height: 500px;
     background: #1e1e1e;
     border-radius: 10px;
     overflow: hidden;
@@ -31,6 +29,7 @@
 
 .close {
     background: #ff5f56;
+    cursor: pointer;
 }
 
 .minimize {
