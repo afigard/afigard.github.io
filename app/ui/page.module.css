@@ -10,45 +10,6 @@
     padding: 40px 0;
 }
 
-.mainEducation {
-    padding: 40px 0;
-    text-align: center;
-}
-
-.mainEducation h1 {
-    color: white;
-    font-size: 2em;
-    font-weight: 800;
-}
-
-.mainEducation .link {
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-}
-
-.mainEducation .link:hover {
-    color: cornflowerblue;
-    text-decoration: underline;
-}
-
-.mainEducation .arrow {
-    color: indianred;
-    font-size: 3em;
-}
-
-.mainEducation .location {
-    color: gray;
-    font-style: italic;
-    font-size: smaller;
-}
-
-.mainEducation .horizontalContentDiv {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .contact {
     list-style-type: none;
     padding: 0;

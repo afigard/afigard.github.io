@@ -1,6 +1,5 @@
-// components/Terminal.js
 import React from "react";
-import styles from "./Terminal.module.css";
+import styles from "./terminal.module.css";
 
 const Terminal = ({ title, heightInput, widthInput, children, onClose }) => {
   return (

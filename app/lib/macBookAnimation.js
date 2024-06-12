@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Terminal from "../components/Terminal";
+import styles from "./macBookAnimation.module.css";
+import Terminal from "../components/terminal";
 
 // credits:
 // https://codepen.io/mvaneijgen/embed/KKbVObP?editors=0010?height=450&slug-hash=KKbVObP%3Feditors%3D0010&user=mvaneijgen&tab-bar-color=%23222&name=cp_embed_3#result-box
@@ -14,6 +15,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const MacBookAnimation = () => {
   const macbookRef = useRef(null);
+  const topPartRef = useRef(null);
+  const mockupRef = useRef(null);
+  const topRef = useRef(null);
   const messageRef = useRef(null);
   const [showEducationTerminal, setShowEducationTerminal] = useState(false);
   const [loginTime, setLoginTime] = useState("");
@@ -69,15 +73,15 @@ const MacBookAnimation = () => {
       });
 
       macbook
-        .to(".mockup .part.top", {
+        .to(topPartRef.current, {
           transform: "translate3d(0, 0, 0) rotateX(0deg)",
           ease: "power2.in",
         })
-        .to(".mockup", {
+        .to(mockupRef.current, {
           scale: 3,
           ease: "power2.in",
         })
-        .to(".mockup .part.top .top", {
+        .to(topRef.current, {
           transform: "translate3d(0, 10px, -10px) rotateX(0deg) scaleX(0.98)",
           ease: "power2.in",
         })
@@ -97,51 +101,54 @@ const MacBookAnimation = () => {
     e.preventDefault();
     setShowEducationTerminal(true);
   };
-
   const handleCloseEducationTerminal = () => {
     setShowEducationTerminal(false);
   };
 
   return (
-    <div ref={macbookRef} className="macbook">
-      <div className="mockup loaded opened">
-        <div className="part top">
+    <div ref={macbookRef} className={styles.macbook}>
+      <div
+        ref={mockupRef}
+        className={`${styles.mockup} ${styles.loaded} ${styles.opened}`}
+      >
+        <div ref={topPartRef} className={`${styles.part} ${styles.top}`}>
           <Image
             src="/macbook-top.png"
             alt="Top part of the MacBook"
             width={650}
             height={650}
-            className="top"
+            className={styles.top}
+            ref={topRef}
           />
           <Image
             src="/macbook-screen.svg"
             alt="Screen cover of the MacBook (top)"
             width={650}
             height={650}
-            className="cover"
+            className={styles.cover}
           />
         </div>
-        <div className="part bottom">
+        <div className={`${styles.part} ${styles.bottom}`}>
           <Image
             src="/macbook-screen.svg"
             alt="Screen cover of the MacBook (bottom)"
             width={650}
             height={650}
-            className="cover"
+            className={styles.cover}
           />
           <Image
             src="/macbook-bottom.png"
             alt="Bottom part of the MacBook"
             width={650}
             height={650}
-            className="bottom"
+            className={styles.bottom}
           />
         </div>
       </div>
-      <div ref={messageRef} className="message">
+      <div ref={messageRef} className={styles.message}>
         <div
-          className={`original-terminal ${
-            showEducationTerminal ? "dimmed" : ""
+          className={`${styles.originalTerminal} ${
+            showEducationTerminal ? styles.dimmed : ""
           }`}
         >
           <Terminal title="Terminal" heightInput="500px" widthInput="800px">
@@ -184,7 +191,7 @@ const MacBookAnimation = () => {
           </Terminal>
         </div>
         {showEducationTerminal && (
-          <div className="educationTerminal">
+          <div className={styles.educationTerminal}>
             <Terminal
               title="education.txt"
               heightInput="600px"
@@ -196,7 +203,7 @@ const MacBookAnimation = () => {
                 <br />2 years of prep classes for the grandes écoles at
                 the&nbsp;
                 <Link
-                  className="textLink"
+                  className={styles.textLink}
                   href="https://www.lycee-buffon.fr/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -210,7 +217,7 @@ const MacBookAnimation = () => {
                 <br />
                 Joined the&nbsp;
                 <Link
-                  className="textLink"
+                  className={styles.textLink}
                   href="https://www.esilv.fr/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -224,7 +231,7 @@ const MacBookAnimation = () => {
                 <br />
                 Exchange semester at the&nbsp;
                 <Link
-                  className="textLink"
+                  className={styles.textLink}
                   href="https://www.hanyang.ac.kr/web/eng/home"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -238,7 +245,7 @@ const MacBookAnimation = () => {
                 <br />
                 Exchange year at the&nbsp;
                 <Link
-                  className="textLink"
+                  className={styles.textLink}
                   href="https://www.ucsc-extension.edu/"
                   target="_blank"
                   rel="noopener noreferrer"
