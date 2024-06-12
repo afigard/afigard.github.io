@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import styles from "./macBookAnimation.module.css";
-import Terminal from "../components/terminal";
+import styles from "../ui/macBookAnimation.module.css";
+import Terminal from "./terminal";
 
 // credits:
 // https://codepen.io/mvaneijgen/embed/KKbVObP?editors=0010?height=450&slug-hash=KKbVObP%3Feditors%3D0010&user=mvaneijgen&tab-bar-color=%23222&name=cp_embed_3#result-box

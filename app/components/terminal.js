@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./terminal.module.css";
+import styles from "../ui/terminal.module.css";
 
 const Terminal = ({ title, heightInput, widthInput, children, onClose }) => {
   return (

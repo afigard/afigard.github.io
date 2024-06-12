@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ui/page.module.css";
-import MacBookAnimation from "./lib/macBookAnimation";
+import MacBookAnimation from "./components/macBookAnimation";
 
 export default function Home() {
   return (
