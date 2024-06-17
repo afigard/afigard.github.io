@@ -11,7 +11,7 @@ export default function Home() {
         <h1>Adrien Figard</h1>
         <ul className={styles.contact}>
           <li>
-            <Link href="mailto:adrien.figard@gmail.com">
+            <Link href="mailto:afigard@gmail.com">
               <Image
                 className={styles.emailLogo}
                 src="/email-logo.svg"
@@ -23,7 +23,7 @@ export default function Home() {
           </li>
           <li>
             <Link
-              href="https://www.malt.fr/profile/adrienfigard"
+              href="https://www.malt.fr/profile/afigard"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -38,7 +38,7 @@ export default function Home() {
           </li>
           <li>
             <Link
-              href="https://www.linkedin.com/in/adrien-figard/"
+              href="https://www.linkedin.com/in/afigard"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -20,7 +20,9 @@ const MacBookAnimation = () => {
   const topRef = useRef(null);
   const messageRef = useRef(null);
   const [showEducationTerminal, setShowEducationTerminal] = useState(false);
+  const [showProjectsTerminal, setShowProjectsTerminal] = useState(false);
   const [loginTime, setLoginTime] = useState("");
+  const [areButtonsDisabled, setAreButtonsDisabled] = useState(false);
 
   const scrollToTop = () => {
     const scrollStep = -window.scrollY / (1000 / 15);
@@ -100,9 +102,21 @@ const MacBookAnimation = () => {
   const handleOpenEducationTerminal = (e) => {
     e.preventDefault();
     setShowEducationTerminal(true);
+    setAreButtonsDisabled(true);
   };
   const handleCloseEducationTerminal = () => {
     setShowEducationTerminal(false);
+    setAreButtonsDisabled(false);
+  };
+
+  const handleOpenProjectsTerminal = (e) => {
+    e.preventDefault();
+    setShowProjectsTerminal(true);
+    setAreButtonsDisabled(true);
+  };
+  const handleCloseProjectsTerminal = () => {
+    setShowProjectsTerminal(false);
+    setAreButtonsDisabled(false);
   };
 
   return (
@@ -148,52 +162,62 @@ const MacBookAnimation = () => {
       <div ref={messageRef} className={styles.message}>
         <div
           className={`${styles.originalTerminal} ${
-            showEducationTerminal ? styles.dimmed : ""
+            showEducationTerminal || showProjectsTerminal ? styles.dimmed : ""
           }`}
         >
-          <Terminal title="Terminal" heightInput="500px" widthInput="800px">
+          <Terminal
+            title="&#x1F4C1; Portfolio &#8212; afigard@gmail.com &#8212; zsh"
+            heightInput="500px"
+            widthInput="800px"
+            onClose={scrollToTop}
+          >
             <span style={{ color: "white", fontWeight: "initial" }}>
               Last login: {loginTime} on console
             </span>
             <br />
+            <span style={{ color: "gray", fontWeight: "initial" }}>[</span>
             <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
-            <span style={{ color: "aqua" }}> &#126; &nbsp;</span>
+            <span style={{ color: "aqua" }}> &#126;&emsp;</span>
             <span style={{ color: "white", fontWeight: "initial" }}>
               cd Documents/Git/Portfolio
             </span>
+            <br />
+            <span style={{ color: "gray", fontWeight: "initial" }}>[</span>
+            <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
+            <span style={{ color: "aqua" }}> Portfolio </span>
+            <span style={{ color: "blue" }}>git:(</span>
+            <span style={{ color: "red" }}>master</span>
+            <span style={{ color: "blue" }}>) </span>
+            <span style={{ color: "gray" }}>x&emsp;</span>
+            <span style={{ color: "white", fontWeight: "initial" }}>ls</span>
+            <br />
+            <button
+              onClick={handleOpenEducationTerminal}
+              style={{ pointerEvents: areButtonsDisabled ? "none" : "auto" }}
+            >
+              education.txt
+            </button>
+            &emsp;&emsp;&emsp;
+            <button
+              onClick={handleOpenProjectsTerminal}
+              style={{ pointerEvents: areButtonsDisabled ? "none" : "auto" }}
+            >
+              projects.md
+            </button>
             <br />
             <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
             <span style={{ color: "aqua" }}> Portfolio </span>
             <span style={{ color: "blue" }}>git:(</span>
             <span style={{ color: "red" }}>master</span>
-            <span style={{ color: "blue" }}>) &nbsp;</span>
-            <span style={{ color: "white", fontWeight: "initial" }}>
-              ls
-              <br />
-              <br />
-              <Link href="/" onClick={handleOpenEducationTerminal}>
-                education &#x1F393;
-              </Link>
-              <br />
-              <br />
-              <Link href="/projects">projects &#x1F4BB;</Link>
-              <br />
-              <br />
-              <button onClick={scrollToTop}>home &#x1F3E0;</button>
-              <br />
-              <br />
-            </span>
-            <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
-            <span style={{ color: "aqua" }}> Portfolio </span>
-            <span style={{ color: "blue" }}>git:(</span>
-            <span style={{ color: "red" }}>master</span>
-            <span style={{ color: "blue" }}>) &nbsp;</span>
+            <span style={{ color: "blue" }}>) </span>
+            <span style={{ color: "gray" }}>x&emsp;</span>
+            <span style={{ color: "#404040" }}>&#x25AE;</span>
           </Terminal>
         </div>
         {showEducationTerminal && (
           <div className={styles.educationTerminal}>
             <Terminal
-              title="education.txt"
+              title="&#x1F4C4; education.txt"
               heightInput="600px"
               widthInput="950px"
               onClose={handleCloseEducationTerminal}
@@ -260,6 +284,55 @@ const MacBookAnimation = () => {
                 Graduated with a master&apos;s degree in engineering from the
                 ESILV.
               </span>
+            </Terminal>
+          </div>
+        )}
+        {showProjectsTerminal && (
+          <div className={styles.projectsTerminal}>
+            <Terminal
+              title="	&#x1F4CB; projects.md"
+              heightInput="700px"
+              widthInput="700px"
+              onClose={handleCloseProjectsTerminal}
+            >
+              <span className={styles.mdTitle}>GraphQL Mesh gateway</span>
+              <hr />
+              <br />
+              <span className={styles.mdCore}>
+                The goal is to let developers easily access services that are
+                written in other APIs specs (such as OpenAPI, PostgreSQL, etc.)
+                with GraphQL queries and mutations.
+              </span>
+              <br />
+              <br />
+              &#x21AA;{" "}
+              <Link
+                className={styles.mdLink}
+                href="https://github.com/BouyguesTelecom/graphql-mesh"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                link to repo
+              </Link>
+              <br />
+              <br />
+              <span className={styles.mdTitle}>afigard.com</span>
+              <hr />
+              <br />
+              <span className={styles.mdCore}>
+                This portfolio website, built with Next.js.
+              </span>
+              <br />
+              <br />
+              &#x21AA;{" "}
+              <Link
+                className={styles.mdLink}
+                href="https://github.com/afigard/portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                link to repo
+              </Link>
             </Terminal>
           </div>
         )}

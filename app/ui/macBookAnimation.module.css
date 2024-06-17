@@ -106,16 +106,34 @@
 .educationTerminal {
     position: absolute;
     top: 5%;
-    left: 80%;
+    left: 90%;
     transform: translateX(-50%);
     z-index: 10;
 }
 
-.textLink {
-    font-weight: bolder;
+.textLink:hover {
+    color: cornflowerblue;
+    text-decoration: underline;
 }
 
-.textLink:hover {
+.projectsTerminal {
+    position: absolute;
+    top: -5%;
+    left: 60%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.mdTitle {
+    font-size: 2em;
+}
+
+.mdCore {
+    font-weight: lighter;
+}
+
+.mdLink {
+    font-weight: lighter;
     color: cornflowerblue;
     text-decoration: underline;
 }
