@@ -6,8 +6,11 @@
     padding: 20px;
 }
 
-.main {
-    padding: 40px 0;
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
 }
 
 .contact {
@@ -43,16 +46,68 @@
     filter: brightness(0) saturate(100%) invert(52%) sepia(89%) saturate(406%) hue-rotate(82deg) brightness(95%) contrast(89%);
 }
 
-.footer {
-    z-index: 100;
-    text-align: center;
-    padding: 150px 0;
-    position: relative;
+@media only screen and (min-aspect-ratio: 1/1) {
+    .mainMobile {
+        display: none;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .header {
+        z-index: 100;
+        text-align: center;
+        padding: 150px 0;
+        position: relative;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 5em;
+        color: rgb(255, 255, 255);
+        font-weight: 800;
+    }
 }
 
-.footer h1 {
-    margin: 0;
-    font-size: 5em;
-    color: rgb(255, 255, 255);
-    font-weight: 800;
+@media only screen and (max-aspect-ratio: 1/1) {
+    .mainDesktop {
+        display: none;
+    }
+
+    .header {
+        text-align: center;
+        position: relative;
+        margin-top: 25px;
+        margin-bottom: 50px;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+        color: rgb(255, 255, 255);
+        font-weight: 800;
+    }
+
+    .emailLogo,
+    .maltLogo,
+    .linkedinLogo,
+    .githubLogo {
+        filter: brightness(0) saturate(100%) invert(0.75);
+    }
+
+    .mainMobile h1 {
+        font-size: 1.5em;
+        color: rgb(255, 255, 255);
+        font-weight: 800;
+    }
+
+    .mainMobile h2 {
+        color: rgb(255, 255, 255);
+        font-weight: 800;
+    }
+
+    .mainMobile .mdLink {
+        color: cornflowerblue;
+        text-decoration: underline;
+    }
 }

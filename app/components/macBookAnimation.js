@@ -295,7 +295,9 @@ const MacBookAnimation = () => {
               widthInput="700px"
               onClose={handleCloseProjectsTerminal}
             >
-              <span className={styles.mdTitle}>GraphQL Mesh gateway</span>
+              <span className={styles.mdTitle}>
+                &#x269B; GraphQL Mesh gateway
+              </span>
               <hr />
               <br />
               <span className={styles.mdCore}>
@@ -316,7 +318,7 @@ const MacBookAnimation = () => {
               </Link>
               <br />
               <br />
-              <span className={styles.mdTitle}>afigard.com</span>
+              <span className={styles.mdTitle}>&#x1F310; afigard.com</span>
               <hr />
               <br />
               <span className={styles.mdCore}>
