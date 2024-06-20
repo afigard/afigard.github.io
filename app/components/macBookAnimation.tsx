@@ -13,12 +13,12 @@ import Terminal from "./terminal";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const MacBookAnimation = () => {
-  const macbookRef = useRef(null);
-  const topPartRef = useRef(null);
-  const mockupRef = useRef(null);
-  const topRef = useRef(null);
-  const messageRef = useRef(null);
+const MacBookAnimation: React.FC = () => {
+  const macbookRef = useRef<HTMLDivElement>(null);
+  const topPartRef = useRef<HTMLDivElement>(null);
+  const mockupRef = useRef<HTMLDivElement>(null);
+  const topRef = useRef<HTMLImageElement>(null);
+  const messageRef = useRef<HTMLDivElement>(null);
   const [showEducationTerminal, setShowEducationTerminal] = useState(false);
   const [showProjectsTerminal, setShowProjectsTerminal] = useState(false);
   const [loginTime, setLoginTime] = useState("");
@@ -99,21 +99,27 @@ const MacBookAnimation = () => {
     return () => ctx.revert();
   }, []);
 
-  const handleOpenEducationTerminal = (e) => {
+  const handleOpenEducationTerminal = (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
     e.preventDefault();
     setShowEducationTerminal(true);
     setAreButtonsDisabled(true);
   };
+
   const handleCloseEducationTerminal = () => {
     setShowEducationTerminal(false);
     setAreButtonsDisabled(false);
   };
 
-  const handleOpenProjectsTerminal = (e) => {
+  const handleOpenProjectsTerminal = (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
     e.preventDefault();
     setShowProjectsTerminal(true);
     setAreButtonsDisabled(true);
   };
+
   const handleCloseProjectsTerminal = () => {
     setShowProjectsTerminal(false);
     setAreButtonsDisabled(false);

@@ -102,7 +102,10 @@ export default function Home() {
           Aug. 2022 - Jul. 2023
           <span style={{ fontWeight: "initial" }}> (Santa Clara, USA)</span>
         </h2>
-        <p>Exchange year at the UCSC Silicon Valley Extension.</p>
+        <p>
+          Exchange year at the UCSC Silicon Valley Extension. Double certificate
+          in computer programming and software engineering.
+        </p>
         <h2>Apr. 2024</h2>
         <p>
           Graduated with a master&apos;s degree in engineering from the ESILV.

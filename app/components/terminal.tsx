@@ -1,7 +1,21 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styles from "../ui/terminal.module.css";
 
-const Terminal = ({ title, heightInput, widthInput, children, onClose }) => {
+interface TerminalProps {
+  title: string;
+  heightInput: string;
+  widthInput: string;
+  children: ReactNode;
+  onClose: () => void;
+}
+
+const Terminal: React.FC<TerminalProps> = ({
+  title,
+  heightInput,
+  widthInput,
+  children,
+  onClose,
+}) => {
   return (
     <div
       className={styles.terminalContainer}
