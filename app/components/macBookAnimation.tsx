@@ -172,7 +172,7 @@ const MacBookAnimation: React.FC = () => {
           }`}
         >
           <Terminal
-            title="&#x1F4C1; Portfolio &#8212; afigard@gmail.com &#8212; zsh"
+            title="&#x1F4C1; Portfolio &#8212; afigard.pro@gmail.com &#8212; zsh"
             heightInput="500px"
             widthInput="800px"
             onClose={scrollToTop}

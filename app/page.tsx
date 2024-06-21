@@ -18,7 +18,7 @@ export default function Home() {
         <h1>Adrien Figard</h1>
         <ul className={styles.contact}>
           <li>
-            <Link href="mailto:afigard@gmail.com">
+            <Link href="mailto:afigard.pro@gmail.com">
               <Image
                 className={styles.emailLogo}
                 src="/email-logo.svg"
