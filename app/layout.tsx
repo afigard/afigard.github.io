@@ -9,6 +9,20 @@ export const metadata: Metadata = {
   },
   description: "Portfolio website of the work of Adrien Figard.",
   metadataBase: new URL("https://adrienfigard.com"),
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/icon-light.png",
+        href: "/icon-light.png",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/icon-dark.png",
+        href: "/icon-dark.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
