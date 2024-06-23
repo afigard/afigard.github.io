@@ -225,7 +225,7 @@ const MacBookAnimation: React.FC = () => {
             <Terminal
               title="&#x1F4C4; education.txt"
               heightInput="600px"
-              widthInput="950px"
+              widthInput="1150px"
               onClose={handleCloseEducationTerminal}
             >
               <span style={{ color: "white", fontWeight: "initial" }}>
