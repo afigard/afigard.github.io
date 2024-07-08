@@ -46,6 +46,11 @@
     filter: brightness(0) saturate(100%) invert(52%) sepia(89%) saturate(406%) hue-rotate(82deg) brightness(95%) contrast(89%);
 }
 
+.scroll {
+    margin: auto;
+    margin-top: 150px;
+}
+
 @media only screen and (min-aspect-ratio: 1/1) {
     .mainMobile {
         display: none;
@@ -72,6 +77,10 @@
 
 @media only screen and (max-aspect-ratio: 1/1) {
     .mainDesktop {
+        display: none;
+    }
+
+    .scroll {
         display: none;
     }
 

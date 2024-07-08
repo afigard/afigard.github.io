@@ -74,6 +74,14 @@ export default function Home() {
             </Link>
           </li>
         </ul>
+        <Image
+          className={styles.scroll}
+          src="/scroll.gif"
+          width={50}
+          height={50}
+          alt="GIF of a mouse scrolling down"
+          unoptimized
+        ></Image>
       </header>
 
       <main className={styles.mainDesktop}>
