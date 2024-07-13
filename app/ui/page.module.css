@@ -46,9 +46,15 @@
     filter: brightness(0) saturate(100%) invert(52%) sepia(89%) saturate(406%) hue-rotate(82deg) brightness(95%) contrast(89%);
 }
 
+.scrollText {
+    margin-top: 160px;
+}
+
 .scroll {
-    margin: auto;
-    margin-top: 150px;
+    width: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
 }
 
 @media only screen and (min-aspect-ratio: 1/1) {
@@ -80,6 +86,7 @@
         display: none;
     }
 
+    .scrollText,
     .scroll {
         display: none;
     }

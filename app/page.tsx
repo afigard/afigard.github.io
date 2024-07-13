@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ui/page.module.css";
 import MacBookAnimation from "./components/macBookAnimation";
+import ScrollDown from "./components/scrollDown";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         width={40}
         height={40}
         alt="Logo of the website"
-      ></Image>
+      />
       <header className={styles.header}>
         <h1>Adrien Figard</h1>
         <ul className={styles.contact}>
@@ -74,14 +75,7 @@ export default function Home() {
             </Link>
           </li>
         </ul>
-        <Image
-          className={styles.scroll}
-          src="/scroll.gif"
-          width={50}
-          height={50}
-          alt="GIF of a mouse scrolling down"
-          unoptimized
-        ></Image>
+        <ScrollDown />
       </header>
 
       <main className={styles.mainDesktop}>

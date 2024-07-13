@@ -173,8 +173,8 @@ const MacBookAnimation: React.FC = () => {
         >
           <Terminal
             title="&#x1F4C1; Portfolio &#8212; afigard.pro@gmail.com &#8212; zsh"
-            heightInput="500px"
-            widthInput="900px"
+            heightInput="66vh"
+            widthInput="55vw"
             onClose={scrollToTop}
           >
             <span style={{ color: "white", fontWeight: "initial" }}>
@@ -224,8 +224,8 @@ const MacBookAnimation: React.FC = () => {
           <div className={styles.educationTerminal}>
             <Terminal
               title="&#x1F4C4; education.txt"
-              heightInput="600px"
-              widthInput="1150px"
+              heightInput="85vh"
+              widthInput="65vw"
               onClose={handleCloseEducationTerminal}
             >
               <span style={{ color: "white", fontWeight: "initial" }}>
@@ -297,8 +297,8 @@ const MacBookAnimation: React.FC = () => {
           <div className={styles.projectsTerminal}>
             <Terminal
               title="	&#x1F4CB; projects.md"
-              heightInput="700px"
-              widthInput="700px"
+              heightInput="92vh"
+              widthInput="46vw"
               onClose={handleCloseProjectsTerminal}
             >
               <span className={styles.mdTitle}>
