@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ui/page.module.css";
@@ -6,8 +8,43 @@ import MacBookAnimation from "./components/macBookAnimation";
 import ScrollDown from "./components/scrollDown";
 
 export default function Home() {
+  const [theme, setTheme] = useState("default");
+
+  const handleThemeChange = (newTheme: string) => {
+    const overlay = document.getElementById("transition-overlay");
+
+    if (overlay) {
+      overlay.classList.add(styles.transitioning);
+
+      setTimeout(() => {
+        setTheme(newTheme);
+
+        overlay.classList.remove(styles.transitioning);
+      }, 750);
+    }
+  };
+
   return (
-    <div className={styles.container}>
+    <div className={`${styles[theme]} ${styles.container}`}>
+      <div id="transition-overlay" className={styles.transitionOverlay}></div>
+      <div className={styles.themeSwitcher}>
+        <button
+          onClick={() => handleThemeChange("red")}
+          className={styles.redButton}
+        ></button>
+        <button
+          onClick={() => handleThemeChange("green")}
+          className={styles.greenButton}
+        ></button>
+        <button
+          onClick={() => handleThemeChange("blue")}
+          className={styles.blueButton}
+        ></button>
+        <button
+          onClick={() => handleThemeChange("default")}
+          className={styles.defaultButton}
+        ></button>
+      </div>
       <Image
         className={styles.logo}
         src="/website-logo.png"
@@ -79,7 +116,7 @@ export default function Home() {
       </header>
 
       <main className={styles.mainDesktop}>
-        <MacBookAnimation />
+        <MacBookAnimation theme={theme} />
       </main>
       <main className={styles.mainMobile}>
         <h1>Education</h1>

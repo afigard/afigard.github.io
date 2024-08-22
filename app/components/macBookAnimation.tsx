@@ -13,7 +13,7 @@ import Terminal from "./terminal";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const MacBookAnimation: React.FC = () => {
+const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
   const macbookRef = useRef<HTMLDivElement>(null);
   const topPartRef = useRef<HTMLDivElement>(null);
   const mockupRef = useRef<HTMLDivElement>(null);
@@ -126,7 +126,7 @@ const MacBookAnimation: React.FC = () => {
   };
 
   return (
-    <div ref={macbookRef} className={styles.macbook}>
+    <div ref={macbookRef} className={`${styles[theme]} ${styles.macbook}`}>
       <div
         ref={mockupRef}
         className={`${styles.mockup} ${styles.loaded} ${styles.opened}`}
