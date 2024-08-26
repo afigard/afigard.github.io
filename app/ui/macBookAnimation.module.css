@@ -12,16 +12,8 @@
     flex-direction: column;
 }
 
-.red {
-    background-color: red;
-}
-
-.green {
-    background-color: green;
-}
-
-.blue {
-    background-color: blue;
+.reverse {
+    background: #F1F1F1;
 }
 
 .mockup {

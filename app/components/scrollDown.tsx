@@ -22,6 +22,7 @@ const ScrollDown = () => {
           height={50}
           alt="GIF of an arrow pointing down, slightly bouncing"
           unoptimized
+          className={styles.arrow}
         />
       </div>
     </div>

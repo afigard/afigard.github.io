@@ -1,17 +1,16 @@
 .container {
     font-family: Arial, sans-serif;
-    color: rgb(200, 200, 200);
+    color: #F1F1F1;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Theme Switcher Buttons */
 .themeSwitcher {
     position: absolute;
     top: 20px;
     left: 20px;
-    z-index: 1000;
+    z-index: 2;
     display: flex;
     gap: 10px;
 }
@@ -19,45 +18,40 @@
 .themeSwitcher button {
     width: 20px;
     height: 20px;
-    border: 2px solid white;
+    border: 2px solid #F1F1F1;
     border-radius: 50%;
     cursor: pointer;
     background-clip: padding-box;
 }
 
-.redButton {
-    background-color: red;
+.defaultThemeButton {
+    background-color: #1C1C1C;
 }
 
-.greenButton {
-    background-color: green;
+.reverseThemeButton {
+    background: #F1F1F1;
 }
 
-.blueButton {
-    background-color: blue;
+.reverse .themeSwitcher button {
+    border: 2px solid #1C1C1C;
 }
 
-.defaultButton {
-    background-color: #121212;
+.reverse .header h1,
+.reverse .header p {
+    color: #1C1C1C;
 }
 
-/* Theme Colors */
-.red .header h1,
-.red .header p {
-    color: pink;
+.reverse .emailLogo,
+.reverse .maltLogo,
+.reverse .linkedinLogo,
+.reverse .githubLogo {
+    filter: none;
 }
 
-.green .header h1,
-.green .header p {
-    color: lightgreen;
+.reverse .arrow {
+    filter: invert(1) brightness(0);
 }
 
-.blue .header h1,
-.blue .header p {
-    color: lightblue;
-}
-
-/* Transitions */
 .transitionOverlay {
     position: absolute;
     top: 0;
@@ -145,7 +139,7 @@
     .header h1 {
         margin: 0;
         font-size: 5em;
-        color: rgb(255, 255, 255);
+        color: #F1F1F1;
         font-weight: 800;
     }
 }
@@ -160,6 +154,10 @@
         display: none;
     }
 
+    .themeSwitcher {
+        display: none;
+    }
+
     .header {
         text-align: center;
         position: relative;
@@ -169,7 +167,7 @@
 
     .header h1 {
         font-size: 2.5em;
-        color: rgb(255, 255, 255);
+        color: #F1F1F1;
         font-weight: 800;
     }
 
@@ -182,12 +180,12 @@
 
     .mainMobile h1 {
         font-size: 1.5em;
-        color: rgb(255, 255, 255);
+        color: #F1F1F1;
         font-weight: 800;
     }
 
     .mainMobile h2 {
-        color: rgb(255, 255, 255);
+        color: #F1F1F1;
         font-weight: 800;
     }
 

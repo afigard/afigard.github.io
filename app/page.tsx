@@ -29,20 +29,12 @@ export default function Home() {
       <div id="transition-overlay" className={styles.transitionOverlay}></div>
       <div className={styles.themeSwitcher}>
         <button
-          onClick={() => handleThemeChange("red")}
-          className={styles.redButton}
-        ></button>
-        <button
-          onClick={() => handleThemeChange("green")}
-          className={styles.greenButton}
-        ></button>
-        <button
-          onClick={() => handleThemeChange("blue")}
-          className={styles.blueButton}
-        ></button>
-        <button
           onClick={() => handleThemeChange("default")}
-          className={styles.defaultButton}
+          className={styles.defaultThemeButton}
+        ></button>
+        <button
+          onClick={() => handleThemeChange("reverse")}
+          className={styles.reverseThemeButton}
         ></button>
       </div>
       <Image

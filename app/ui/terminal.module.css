@@ -3,7 +3,7 @@
     border-radius: 10px;
     overflow: hidden;
     font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
-    color: white;
+    color: #F1F1F1;
 }
 
 .terminalHeader {
