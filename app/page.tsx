@@ -6,36 +6,36 @@ import Link from "next/link";
 import styles from "./ui/page.module.css";
 import MacBookAnimation from "./components/macBookAnimation";
 import ScrollDown from "./components/scrollDown";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function Home() {
-  const [theme, setTheme] = useState("default");
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
 
-  const handleThemeChange = (newTheme: string) => {
-    const overlay = document.getElementById("transition-overlay");
-
-    if (overlay) {
-      overlay.classList.add(styles.transitioning);
-
-      setTimeout(() => {
-        setTheme(newTheme);
-
-        overlay.classList.remove(styles.transitioning);
-      }, 750);
-    }
+  const handleThemeToggle = () => {
+    setIsDarkTheme(!isDarkTheme);
   };
 
   return (
-    <div className={`${styles[theme]} ${styles.container}`}>
-      <div id="transition-overlay" className={styles.transitionOverlay}></div>
+    <div
+      className={`${isDarkTheme ? styles.dark : styles.light} ${
+        styles.container
+      }`}
+    >
       <div className={styles.themeSwitcher}>
-        <button
-          onClick={() => handleThemeChange("default")}
-          className={styles.defaultThemeButton}
-        ></button>
-        <button
-          onClick={() => handleThemeChange("reverse")}
-          className={styles.reverseThemeButton}
-        ></button>
+        <div
+          onClick={handleThemeToggle}
+          className={`${styles.themeToggleSlider} ${
+            !isDarkTheme && styles.light
+          }`}
+        >
+          <div className={styles.sliderCircle}>
+            {isDarkTheme ? (
+              <FaMoon size={16} color="#6A5B86" />
+            ) : (
+              <FaSun size={16} color="#DD984B" />
+            )}
+          </div>
+        </div>
       </div>
       <Image
         className={styles.logo}
@@ -108,7 +108,7 @@ export default function Home() {
       </header>
 
       <main className={styles.mainDesktop}>
-        <MacBookAnimation theme={theme} />
+        <MacBookAnimation theme={isDarkTheme ? "dark" : "light"} />
       </main>
       <main className={styles.mainMobile}>
         <h1>Education</h1>
