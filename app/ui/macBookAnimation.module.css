@@ -25,6 +25,7 @@
     perspective-origin: 50% 100%;
     opacity: 0;
     transition: 500ms opacity;
+    user-select: none;
 }
 
 .mockup.loaded {
