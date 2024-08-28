@@ -63,6 +63,13 @@
     margin-top: 25px;
 }
 
+.header h1,
+.header p,
+.contact,
+.arrow {
+    user-select: none;
+}
+
 .contact {
     list-style-type: none;
     padding: 0;
