@@ -164,7 +164,7 @@ export default function Home() {
           queries and mutations.
         </p>
         <br />
-        <h2>&#x1F310; afigard.com</h2>
+        <h2>&#x1F310; afigard.github.io</h2>
         <span>
           &#x21AA;{" "}
           <Link

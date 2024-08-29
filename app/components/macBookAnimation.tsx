@@ -315,7 +315,7 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
               <br />
               &#x21AA;{" "}
               <Link
-                className={styles.mdLink}
+                className={styles.textLink}
                 href="https://github.com/BouyguesTelecom/graphql-mesh"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -324,7 +324,9 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
               </Link>
               <br />
               <br />
-              <span className={styles.mdTitle}>&#x1F310; afigard.com</span>
+              <span className={styles.mdTitle}>
+                &#x1F310; afigard.github.io
+              </span>
               <hr />
               <br />
               <span className={styles.mdCore}>
@@ -334,7 +336,7 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
               <br />
               &#x21AA;{" "}
               <Link
-                className={styles.mdLink}
+                className={styles.textLink}
                 href="https://github.com/afigard/portfolio"
                 target="_blank"
                 rel="noopener noreferrer"
