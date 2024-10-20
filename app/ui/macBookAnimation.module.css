@@ -116,12 +116,38 @@
     opacity: 0.33 !important;
 }
 
+.terminal-button {
+    margin-right: 3vw;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    pointer-events: auto;
+}
+
+.terminal-button.disabled {
+    pointer-events: none;
+}
+
+.terminal-button:hover {
+    border: 2px solid white;
+    background-color: #121212;
+}
+
 .educationTerminal {
     position: absolute;
     top: 5%;
     left: 80%;
     transform: translateX(-50%);
     z-index: 10;
+}
+
+.educationDates {
+    text-decoration: underline;
+}
+
+.textLink {
+    color: cornflowerblue;
 }
 
 .textLink:hover {

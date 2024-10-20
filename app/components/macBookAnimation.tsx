@@ -197,19 +197,46 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
             <span style={{ color: "gray" }}>x&emsp;</span>
             <span style={{ color: "white", fontWeight: "initial" }}>ls</span>
             <br />
-            <button
-              onClick={handleOpenEducationTerminal}
-              style={{ pointerEvents: areButtonsDisabled ? "none" : "auto" }}
-            >
-              education.txt
-            </button>
-            &emsp;&emsp;&emsp;
-            <button
-              onClick={handleOpenProjectsTerminal}
-              style={{ pointerEvents: areButtonsDisabled ? "none" : "auto" }}
-            >
-              projects.md
-            </button>
+            <br />
+            <div style={{ textAlign: "center" }}>
+              <button
+                onClick={handleOpenEducationTerminal}
+                className={`${styles["terminal-button"]} ${
+                  areButtonsDisabled ? styles["disabled"] : ""
+                }`}
+              >
+                education.txt
+              </button>
+
+              <button
+                style={{
+                  cursor: "default",
+                  marginRight: "3vw",
+                  color: "gray",
+                }}
+              >
+                experience.txt
+              </button>
+
+              <button
+                onClick={handleOpenProjectsTerminal}
+                className={`${styles["terminal-button"]} ${
+                  areButtonsDisabled ? styles["disabled"] : ""
+                }`}
+              >
+                projects.md
+              </button>
+
+              <button
+                style={{
+                  cursor: "default",
+                  color: "gray",
+                }}
+              >
+                skills.txt
+              </button>
+            </div>
+            <br />
             <br />
             <span style={{ color: "#66FF66" }}>&#x279E;&emsp;</span>
             <span style={{ color: "aqua" }}> Portfolio </span>
@@ -229,50 +256,14 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
               onClose={handleCloseEducationTerminal}
             >
               <span style={{ color: "white", fontWeight: "initial" }}>
-                Sep. 2018 - Jul. 2020
-                <br />2 years of prep classes for the grandes écoles at
-                the&nbsp;
-                <Link
-                  className={styles.textLink}
-                  href="https://www.lycee-buffon.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Lycée Buffon
-                </Link>
-                .
+                <p className={styles.educationDates}>March 2024</p>
+                Graduated with a master&apos;s degree in engineering from the
+                ESILV.
                 <br />
                 <br />
-                Sep. 2020
-                <br />
-                Joined the&nbsp;
-                <Link
-                  className={styles.textLink}
-                  href="https://www.esilv.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ecole Supérieure d&apos;Ingénieurs Léonard de Vinci
-                </Link>
-                &nbsp;(ESILV).
-                <br />
-                <br />
-                Feb. 2021 - Jun. 2021
-                <br />
-                Exchange semester at the&nbsp;
-                <Link
-                  className={styles.textLink}
-                  href="https://www.hanyang.ac.kr/web/eng/home"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Hanyang University
-                </Link>
-                .
-                <br />
-                <br />
-                Aug. 2022 - Jul. 2023
-                <br />
+                <p className={styles.educationDates}>
+                  September 2022 to July 2023
+                </p>
                 Exchange year at the&nbsp;
                 <Link
                   className={styles.textLink}
@@ -285,10 +276,47 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
                 .
                 <br />
                 <br />
-                Apr. 2024
+                <p className={styles.educationDates}>
+                  February 2021 to June 2021
+                </p>
+                Exchange semester at the&nbsp;
+                <Link
+                  className={styles.textLink}
+                  href="https://www.hanyang.ac.kr/web/eng/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hanyang University
+                </Link>
+                .
                 <br />
-                Graduated with a master&apos;s degree in engineering from the
-                ESILV.
+                <br />
+                <p className={styles.educationDates}>September 2020</p>
+                Joined the&nbsp;
+                <Link
+                  className={styles.textLink}
+                  href="https://www.esilv.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ecole Supérieure d&apos;Ingénieurs Léonard de Vinci
+                </Link>
+                &nbsp;(ESILV).
+                <br />
+                <br />
+                <p className={styles.educationDates}>
+                  September 2018 to July 2020
+                </p>
+                2 years of prep. classes for the Grandes Ecoles at the&nbsp;
+                <Link
+                  className={styles.textLink}
+                  href="https://www.lycee-buffon.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Lycée Buffon
+                </Link>
+                .
               </span>
             </Terminal>
           </div>
