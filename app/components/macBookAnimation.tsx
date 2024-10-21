@@ -211,7 +211,7 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
               <button
                 style={{
                   cursor: "default",
-                  marginRight: "3vw",
+                  marginRight: "2vw",
                   color: "gray",
                 }}
               >
