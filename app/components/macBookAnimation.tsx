@@ -8,8 +8,45 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "../ui/macBookAnimation.module.css";
 import Terminal from "./terminal";
 
-// credits:
+// Macbook animation credits:
 // https://codepen.io/mvaneijgen/embed/KKbVObP?editors=0010?height=450&slug-hash=KKbVObP%3Feditors%3D0010&user=mvaneijgen&tab-bar-color=%23222&name=cp_embed_3#result-box
+
+const slides = [
+  {
+    title: "GraphQL Mesh gateway",
+    imageSrc: "/mesh-illustration.svg",
+    containerWidth: "40vw",
+    containerHeight: "40vh",
+    description:
+      "Extension of an opensource project to support Bouygues Telecom's needs.\nThe goal is to let developers easily access services that are written in other APIs specs (such as OpenAPI, PostgreSQL, etc.) with GraphQL queries and mutations.",
+    link: "https://github.com/BouyguesTelecom/graphql-mesh-old",
+  },
+  {
+    title: "Portfolio website",
+    imageSrc: "/portfolio-illustration.png",
+    containerWidth: "36vw",
+    containerHeight: "49vh",
+    description: "This portfolio website, built with Next.js.",
+    link: "https://github.com/afigard/afigard.github.io",
+  },
+  {
+    title: "Fast Food + website",
+    imageSrc: "/ffp-illustration.png",
+    containerWidth: "36vw",
+    containerHeight: "49vh",
+    description: "Website to track French fast food nutrition easily.",
+    link: "https://github.com/afigard/fast-food-plus",
+  },
+  {
+    title: "gymDRP website",
+    imageSrc: "/gymdrp-illustration.png",
+    containerWidth: "36vw",
+    containerHeight: "49vh",
+    description:
+      "My first website, written in vanilla JavaScript, HTML and CSS.",
+    link: "https://github.com/afigard/gymdrp",
+  },
+];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +60,7 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
   const [showProjectsTerminal, setShowProjectsTerminal] = useState(false);
   const [loginTime, setLoginTime] = useState("");
   const [areButtonsDisabled, setAreButtonsDisabled] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const scrollToTop = () => {
     const scrollStep = -window.scrollY / (1000 / 15);
@@ -125,6 +163,25 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
     setAreButtonsDisabled(false);
   };
 
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
+    );
+  };
+
+  const {
+    title,
+    imageSrc,
+    containerWidth,
+    containerHeight,
+    description,
+    link,
+  } = slides[currentIndex];
+
   return (
     <div ref={macbookRef} className={`${styles[theme]} ${styles.macbook}`}>
       <div
@@ -224,7 +281,7 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
                   areButtonsDisabled ? styles["disabled"] : ""
                 }`}
               >
-                projects.md
+                projects.ppt
               </button>
 
               <button
@@ -324,53 +381,48 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
         {showProjectsTerminal && (
           <div className={styles.projectsTerminal}>
             <Terminal
-              title="	&#x1F4CB; projects.md"
+              title="&#x1F4CA; projects.ppt"
               heightInput="92vh"
-              widthInput="46vw"
+              widthInput="76vw"
               onClose={handleCloseProjectsTerminal}
             >
-              <span className={styles.mdTitle}>
-                &#x269B; GraphQL Mesh gateway
-              </span>
-              <hr />
-              <br />
-              <span className={styles.mdCore}>
-                The goal is to let developers easily access services that are
-                written in other APIs specs (such as OpenAPI, PostgreSQL, etc.)
-                with GraphQL queries and mutations.
-              </span>
-              <br />
-              <br />
-              &#x21AA;{" "}
-              <Link
-                className={styles.textLink}
-                href="https://github.com/BouyguesTelecom/graphql-mesh"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                link to repo
-              </Link>
-              <br />
-              <br />
-              <span className={styles.mdTitle}>
-                &#x1F310; afigard.github.io
-              </span>
-              <hr />
-              <br />
-              <span className={styles.mdCore}>
-                This portfolio website, built with Next.js.
-              </span>
-              <br />
-              <br />
-              &#x21AA;{" "}
-              <Link
-                className={styles.textLink}
-                href="https://github.com/afigard/portfolio"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                link to repo
-              </Link>
+              <div className={styles.pptContainer}>
+                <button onClick={prevSlide} className={styles.arrowButton}>
+                  &#9664;
+                </button>
+
+                <div className={styles.slideContent}>
+                  <span className={styles.pptTitleText}>{title}</span>
+                  <div
+                    style={{
+                      width: containerWidth,
+                      height: containerHeight,
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      src={imageSrc}
+                      alt="Slide Image"
+                      layout="fill"
+                      objectFit="contain"
+                      className={styles.slideImage}
+                    />
+                  </div>
+                  <span className={styles.pptCoreText}>{description}</span>
+                  <Link
+                    className={styles.textLink}
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub repository
+                  </Link>
+                </div>
+
+                <button onClick={nextSlide} className={styles.arrowButton}>
+                  &#9654;
+                </button>
+              </div>
             </Terminal>
           </div>
         )}
