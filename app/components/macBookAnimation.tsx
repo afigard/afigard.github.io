@@ -58,6 +58,7 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
   const messageRef = useRef<HTMLDivElement>(null);
   const [showEducationTerminal, setShowEducationTerminal] = useState(false);
   const [showProjectsTerminal, setShowProjectsTerminal] = useState(false);
+  const [showSkillsTerminal, setShowSkillsTerminal] = useState(false);
   const [loginTime, setLoginTime] = useState("");
   const [areButtonsDisabled, setAreButtonsDisabled] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -163,6 +164,17 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
     setAreButtonsDisabled(false);
   };
 
+  const handleOpenSkillsTerminal = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setShowSkillsTerminal(true);
+    setAreButtonsDisabled(true);
+  };
+
+  const handleCloseSkillsTerminal = () => {
+    setShowSkillsTerminal(false);
+    setAreButtonsDisabled(false);
+  };
+
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
@@ -225,7 +237,9 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
       <div ref={messageRef} className={styles.message}>
         <div
           className={`${styles.originalTerminal} ${
-            showEducationTerminal || showProjectsTerminal ? styles.dimmed : ""
+            showEducationTerminal || showProjectsTerminal || showSkillsTerminal
+              ? styles.dimmed
+              : ""
           }`}
         >
           <Terminal
@@ -268,7 +282,7 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
               <button
                 style={{
                   cursor: "default",
-                  marginRight: "2vw",
+                  marginRight: "1vw",
                   color: "gray",
                 }}
               >
@@ -285,10 +299,10 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
               </button>
 
               <button
-                style={{
-                  cursor: "default",
-                  color: "gray",
-                }}
+                onClick={handleOpenSkillsTerminal}
+                className={`${styles["terminal-button"]} ${
+                  areButtonsDisabled ? styles["disabled"] : ""
+                }`}
               >
                 skills.txt
               </button>
@@ -422,6 +436,64 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
                 <button onClick={nextSlide} className={styles.arrowButton}>
                   &#9654;
                 </button>
+              </div>
+            </Terminal>
+          </div>
+        )}
+        {showSkillsTerminal && (
+          <div className={styles.skillsTerminal}>
+            <Terminal
+              title="&#x1F4C4; skills.txt"
+              heightInput="60vh"
+              widthInput="75vw"
+              onClose={handleCloseSkillsTerminal}
+            >
+              <div>
+                <span className={styles.educationDates}>Frontend</span>: Next.js
+                | React | TypeScript
+                <br />
+                <span className={styles.educationDates}>Backend</span>:
+                Express.js | GraphQL | Node.js | Python | Spring Boot
+                <br />
+                <br />
+                <span className={styles.educationDates}>Database</span>: MongoDB
+                | MySQL | PostgreSQL
+                <br />
+                <span className={styles.educationDates}>Cloud</span>: AWS{" ("}
+                <Link
+                  className={styles.textLink}
+                  href="https://www.credly.com/badges/1b5f2fa6-eda0-4c1c-9416-8cd54590bab4/public_url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Certified Cloud Practitioner
+                </Link>
+                {") "}| Azure{" ("}
+                <Link
+                  className={styles.textLink}
+                  href="https://www.credly.com/badges/490007b6-02d4-4522-a3a2-9962bca1c507/public_url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Data Fundamentals Certified
+                </Link>
+                {") "}
+                <br />
+                <span className={styles.educationDates}>
+                  DevOps & Containerization
+                </span>
+                : Docker | Kubernetes
+                <br />
+                <span className={styles.educationDates}>E.T.L.</span>: Apache
+                Kafka | Apache NiFi
+                <br />
+                <span className={styles.educationDates}>
+                  Testing & Automation
+                </span>
+                : Jest | Selenium | Vitest
+                <br />
+                <span className={styles.educationDates}>Version Control</span>:
+                Git
               </div>
             </Terminal>
           </div>
