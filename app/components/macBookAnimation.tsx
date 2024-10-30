@@ -57,6 +57,7 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
   const topRef = useRef<HTMLImageElement>(null);
   const messageRef = useRef<HTMLDivElement>(null);
   const [showEducationTerminal, setShowEducationTerminal] = useState(false);
+  const [showExperienceTerminal, setShowExperienceTerminal] = useState(false);
   const [showProjectsTerminal, setShowProjectsTerminal] = useState(false);
   const [showSkillsTerminal, setShowSkillsTerminal] = useState(false);
   const [loginTime, setLoginTime] = useState("");
@@ -151,6 +152,19 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
     setAreButtonsDisabled(false);
   };
 
+  const handleOpenExperienceTerminal = (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    e.preventDefault();
+    setShowExperienceTerminal(true);
+    setAreButtonsDisabled(true);
+  };
+
+  const handleCloseExperienceTerminal = () => {
+    setShowExperienceTerminal(false);
+    setAreButtonsDisabled(false);
+  };
+
   const handleOpenProjectsTerminal = (
     e: React.MouseEvent<HTMLButtonElement>
   ) => {
@@ -237,7 +251,10 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
       <div ref={messageRef} className={styles.message}>
         <div
           className={`${styles.originalTerminal} ${
-            showEducationTerminal || showProjectsTerminal || showSkillsTerminal
+            showEducationTerminal ||
+            showExperienceTerminal ||
+            showProjectsTerminal ||
+            showSkillsTerminal
               ? styles.dimmed
               : ""
           }`}
@@ -280,11 +297,10 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
               </button>
 
               <button
-                style={{
-                  cursor: "default",
-                  marginRight: "1vw",
-                  color: "gray",
-                }}
+                onClick={handleOpenExperienceTerminal}
+                className={`${styles["terminal-button"]} ${
+                  areButtonsDisabled ? styles["disabled"] : ""
+                }`}
               >
                 experience.txt
               </button>
@@ -389,6 +405,50 @@ const MacBookAnimation: React.FC<{ theme: string }> = ({ theme }) => {
                 </Link>
                 .
               </span>
+            </Terminal>
+          </div>
+        )}
+        {showExperienceTerminal && (
+          <div className={styles.experienceTerminal}>
+            <Terminal
+              title="&#x1F4C4; experience.txt"
+              heightInput="90vh"
+              widthInput="50vw"
+              onClose={handleCloseExperienceTerminal}
+            >
+              <div>
+                <span className={styles.educationDates}>
+                  Backend Developer @Bouygues Telecom
+                </span>{" "}
+                <br />
+                (Freelance - Sep. 2023 to now)
+                <br />
+                - Worked mainly with TypeScript
+                <br />
+                - Led an opensource project
+                <br />
+                - Got extensive knowledge of REST APIs and GraphQL
+                <br />
+                - Established CI/CD pipelines
+                <br />
+                - Integrated automated testing
+                <br />
+                <br />
+                <span className={styles.educationDates}>
+                  Data Engineer @Thales
+                </span>{" "}
+                <br />
+                (Internship - Apr. 2022 to Aug. 2022)
+                <br />
+                - Worked mainly with NiFi, Python and SQL
+                <br />
+                - Contributed to a P.O.C. for the 2024 Olympic Games
+                <br />
+                - Deployed 10+ E.T.L. pipelines
+                <br />
+                - Used industrial automation protocols such as SNMP
+                <br />- Developed Python-based machine learning algorithms
+              </div>
             </Terminal>
           </div>
         )}
