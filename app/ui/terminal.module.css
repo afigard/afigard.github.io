@@ -25,6 +25,7 @@
     height: 23px;
     border-radius: 50%;
     margin-left: 10px;
+    position: relative;
 }
 
 .close {
@@ -38,6 +39,33 @@
 
 .maximize {
     background: #27c93f;
+}
+
+.terminalHeader:hover .close::before,
+.terminalHeader:hover .minimize::before,
+.terminalHeader:hover .maximize::before {
+    content: '';
+    color: #1e1e1e;
+    font-weight: bold;
+    position: absolute;
+    top: 43.25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vh;
+    font-weight: 100;
+    line-height: 1;
+}
+
+.terminalHeader:hover .close::before {
+    content: '×';
+}
+
+.terminalHeader:hover .minimize::before {
+    content: '−';
+}
+
+.terminalHeader:hover .maximize::before {
+    content: '↔';
 }
 
 .title {
