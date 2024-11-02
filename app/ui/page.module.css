@@ -83,7 +83,8 @@
 .emailLogo,
 .maltLogo,
 .linkedinLogo,
-.githubLogo {
+.githubLogo,
+.resumeLogo {
     filter: brightness(0) saturate(100%) invert(1);
 }
 
@@ -101,6 +102,10 @@
 
 .githubLogo:hover {
     filter: brightness(0) saturate(100%) invert(52%) sepia(89%) saturate(406%) hue-rotate(82deg) brightness(95%) contrast(89%);
+}
+
+.resumeLogo:hover {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(82%) saturate(3611%) hue-rotate(334deg) brightness(92%) contrast(92%);
 }
 
 .scrollText {
@@ -168,7 +173,8 @@
     .emailLogo,
     .maltLogo,
     .linkedinLogo,
-    .githubLogo {
+    .githubLogo,
+    .resumeLogo {
         filter: brightness(0) saturate(100%) invert(0.75);
     }
 

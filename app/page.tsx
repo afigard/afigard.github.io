@@ -103,6 +103,17 @@ export default function Home() {
               />
             </Link>
           </li>
+          <li>
+            <Link href="/adrien-figard-resume.pdf" target="_blank" download>
+              <Image
+                className={styles.resumeLogo}
+                src="/resume-logo.svg"
+                width={30}
+                height={30}
+                alt="Resume download"
+              />
+            </Link>
+          </li>
         </ul>
         <ScrollDown />
       </header>
