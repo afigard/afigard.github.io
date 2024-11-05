@@ -122,72 +122,171 @@ export default function Home() {
         <MacBookAnimation theme={isDarkTheme ? "dark" : "light"} />
       </main>
       <main className={styles.mainMobile}>
-        <h1>Education</h1>
-        <hr />
-        <br />
-        <h2>Sep. 2018 - Jul. 2020</h2>
-        <p>
-          2 years of preparatory classes for the grandes écoles at the Lycée
-          Buffon.
-        </p>
-        <h2>Sep. 2020</h2>
-        <p>
-          Joined the Ecole Supérieure d&apos;Ingénieurs Léonard de Vinci
-          (ESILV).
-        </p>
-        <h2>
-          Feb. 2021 - Jun. 2021
-          <span style={{ fontWeight: "initial" }}> (Seoul, South Korea)</span>
-        </h2>
-        <p>Exchange semester at the Hanyang University.</p>
-        <h2>
-          Aug. 2022 - Jul. 2023
-          <span style={{ fontWeight: "initial" }}> (Santa Clara, USA)</span>
-        </h2>
-        <p>
-          Exchange year at the UCSC Silicon Valley Extension. Double certificate
-          in computer programming and software engineering.
-        </p>
-        <h2>Apr. 2024</h2>
-        <p>
+        <span style={{ color: "white", fontWeight: "initial" }}>
+          <h1>PROJECTS</h1>
+          <hr />
+          <br />
+          <h2>
+            GraphQL gateway&ensp;-&ensp;
+            <Link
+              className={styles.textLink}
+              href="https://github.com/BouyguesTelecom/graphql-mesh-old"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub repository
+            </Link>
+          </h2>
+          <br />
+          <Image
+            src="/mesh-illustration.svg"
+            alt="Mesh illustration"
+            width={350}
+            height={350}
+            className={styles.slideImage}
+          />
+          <br />
+          <p>
+            Extension of an opensource project to support Bouygues Telecom's
+            needs.
+            <br />
+            The goal is to let developers easily access services that are
+            written in other APIs specs (such as OpenAPI, PostgreSQL, etc.) with
+            GraphQL queries and mutations.
+          </p>
+          <br />
+          <br />
+          <br />
+          <h2>
+            Portfolio website&ensp;-&ensp;
+            <Link
+              className={styles.textLink}
+              href="https://github.com/afigard/afigard.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub repository
+            </Link>
+          </h2>
+          <br />
+          <Image
+            src="/portfolio-illustration.png"
+            alt="Portfolio illustration"
+            width={350}
+            height={350}
+            className={styles.slideImage}
+          />
+          <br />
+          <p>This portfolio website, built with Next.js.</p>
+          <br />
+          <br />
+          <br />
+          <h2>
+            Fast Food + website&ensp;-&ensp;
+            <Link
+              className={styles.textLink}
+              href="https://github.com/afigard/fast-food-plus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub repository
+            </Link>
+          </h2>
+          <br />
+          <Image
+            src="/ffp-illustration.png"
+            alt="Fast Food + illustration"
+            width={350}
+            height={350}
+            className={styles.slideImage}
+          />
+          <br />
+          <p>Website to track French fast food nutrition easily.</p>
+          <br />
+          <br />
+          <br />
+          <h2>
+            gymDRP website&ensp;-&ensp;
+            <Link
+              className={styles.textLink}
+              href="https://github.com/afigard/gymdrp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub repository
+            </Link>
+          </h2>
+          <br />
+          <Image
+            src="/gymdrp-illustration.png"
+            alt="gymDRP illustration"
+            width={350}
+            height={350}
+            className={styles.slideImage}
+          />
+          <br />
+          <p>My first website, written in vanilla JavaScript, HTML and CSS.</p>
+          <br />
+          <br />
+          <br />
+          <h1>EDUCATION</h1>
+          <hr />
+          <br />
+          <p className={styles.educationDates}>March 2024</p>
           Graduated with a master&apos;s degree in engineering from the ESILV.
-          Data & AI major.
-        </p>
-        <br />
-        <h1>Projects</h1>
-        <hr />
-        <br />
-        <h2>&#x269B; GraphQL Mesh gateway</h2>
-        <span>
-          &#x21AA;{" "}
+          <br />
+          <br />
+          <p className={styles.educationDates}>September 2022 to July 2023</p>
+          Exchange year at the&nbsp;
           <Link
-            className={styles.mdLink}
-            href="https://github.com/BouyguesTelecom/graphql-mesh"
+            className={styles.textLink}
+            href="https://www.ucsc-extension.edu/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            link to repo
+            UCSC Silicon Valley Extension
           </Link>
-        </span>
-        <p>
-          The goal is to let developers easily access services that are written
-          in other APIs specs (such as OpenAPI, PostgreSQL, etc.) with GraphQL
-          queries and mutations.
-        </p>
-        <br />
-        <h2>&#x1F310; afigard.github.io</h2>
-        <span>
-          &#x21AA;{" "}
+          .
+          <br />
+          <br />
+          <p className={styles.educationDates}>February 2021 to June 2021</p>
+          Exchange semester at the&nbsp;
           <Link
-            className={styles.mdLink}
-            href="https://github.com/afigard/portfolio"
+            className={styles.textLink}
+            href="https://www.hanyang.ac.kr/web/eng/home"
             target="_blank"
             rel="noopener noreferrer"
           >
-            link to repo
+            Hanyang University
           </Link>
+          .
+          <br />
+          <br />
+          <p className={styles.educationDates}>September 2020</p>
+          Joined the&nbsp;
+          <Link
+            className={styles.textLink}
+            href="https://www.esilv.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ecole Supérieure d&apos;Ingénieurs Léonard de Vinci
+          </Link>
+          &nbsp;(ESILV).
+          <br />
+          <br />
+          <p className={styles.educationDates}>September 2018 to July 2020</p>2
+          years of prep. classes for the Grandes Ecoles at the&nbsp;
+          <Link
+            className={styles.textLink}
+            href="https://www.lycee-buffon.fr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Lycée Buffon
+          </Link>
+          .
         </span>
-        <p>This portfolio website, built with Next.js.</p>
       </main>
     </div>
   );

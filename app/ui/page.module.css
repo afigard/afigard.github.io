@@ -119,6 +119,22 @@
     cursor: pointer;
 }
 
+.educationDates {
+    text-decoration: underline;
+}
+
+.textLink {
+    color: cornflowerblue;
+    font-weight: 100;
+}
+
+.slideImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #121212;
+}
+
 @media only screen and (min-aspect-ratio: 1/1) {
     .mainMobile {
         display: none;
