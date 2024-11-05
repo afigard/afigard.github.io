@@ -147,8 +147,9 @@ export default function Home() {
           />
           <br />
           <p>
-            Extension of an opensource project to support Bouygues Telecom's
-            needs.
+            Extension of an opensource project to support Bouygues
+            Telecom&apos;s needs.
+            <br />
             <br />
             The goal is to let developers easily access services that are
             written in other APIs specs (such as OpenAPI, PostgreSQL, etc.) with
