@@ -48,7 +48,8 @@
 .light .emailLogo,
 .light .maltLogo,
 .light .linkedinLogo,
-.light .githubLogo {
+.light .githubLogo,
+.light .resumeLogo {
     filter: none;
 }
 
