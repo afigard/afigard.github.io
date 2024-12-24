@@ -171,8 +171,8 @@ export default function Home() {
           </h2>
           <br />
           <Image
-            src="/portfolio-illustration.png"
-            alt="Portfolio illustration"
+            src="/portfolio-snapshot-1.png"
+            alt="Portfolio snapshot"
             width={350}
             height={350}
             className={styles.slideImage}

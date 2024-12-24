@@ -23,7 +23,7 @@ const slides = [
   },
   {
     title: "Portfolio website",
-    imageSrc: "/portfolio-illustration.png",
+    imageSrc: "/portfolio-snapshot-1.png",
     containerWidth: "36vw",
     containerHeight: "49vh",
     description: "This portfolio website, built with Next.js.",
