@@ -1,7 +1,7 @@
 const projects = [
   {
     title: "WanderGoal",
-    description: "A a full-stack travel planning app allowing users to generate personalized itineraries based on preferences.",
+    description: "A full-stack travel planning app allowing users to generate personalized itineraries based on preferences.",
     stack: ["Next.js", "PostgreSQL", "Vercel"],
     link: "https://www.wandergoal.fr",
   },
@@ -40,7 +40,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <h3 className="text-xl font-medium group-hover:text-blue-600">
+            <h3 className="text-xl font-medium group-hover:text-emerald-600">
               {title}
             </h3>
             <p className="text-sm text-gray-600 mt-2">{description}</p>

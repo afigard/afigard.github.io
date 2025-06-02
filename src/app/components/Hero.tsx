@@ -5,7 +5,7 @@ export default function Hero() {
       <p className="text-xl text-muted-foreground mt-2">
         Full-stack engineer focused on crafting performant web apps.
       </p>
-      <a href="#projects" className="mt-6 text-blue-600 hover:underline">
+      <a href="#projects" className="mt-6 text-emerald-600 hover:underline">
         View My Work
       </a>
     </section>
