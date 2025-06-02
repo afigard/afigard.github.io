@@ -1,15 +1,27 @@
 const projects = [
   {
-    title: "Super App",
-    description: "A performant full-stack app with Next.js and Supabase.",
-    stack: ["Next.js", "Tailwind", "Supabase"],
-    link: "https://example.com",
+    title: "WanderGoal",
+    description: "A a full-stack travel planning app allowing users to generate personalized itineraries based on preferences.",
+    stack: ["Next.js", "PostgreSQL", "Vercel"],
+    link: "https://www.wandergoal.fr",
   },
   {
-    title: "Portfolio Rebuild",
-    description: "This site you're looking at. Clean and blazing fast.",
-    stack: ["Next.js", "Framer Motion", "Vercel"],
-    link: "#",
+    title: "Fast Food +",
+    description: "A TypeScript-powered web app developed for browsing fast food products by nutritional values.",
+    stack: ["Next.js", "TypeScript", "Vercel"],
+    link: "https://fast-food-plus.vercel.app",
+  },
+  {
+    title: "gymDRP",
+    description: "A static website designed for tracking the latest fitness product drops using vanilla JS.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/afigard/gymdrp",
+  },
+  {
+    title: "C# Monopoly",
+    description: "A Monopoly-style desktop game implementing core gameplay mechanics like dice rolling and player turns.",
+    stack: ["C#", ".NET"],
+    link: "https://github.com/afigard/c-sharp-monopoly",
   },
 ];
 
