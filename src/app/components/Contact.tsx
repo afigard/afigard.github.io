@@ -1,3 +1,6 @@
+import { FaEnvelope, FaGithub } from 'react-icons/fa';
+import { SiMalt } from 'react-icons/si';
+
 export default function Contact() {
   return (
     <section className="px-4 py-20 max-w-2xl mx-auto text-center">
@@ -5,28 +8,31 @@ export default function Contact() {
       <p className="text-gray-600 mb-6">
         I'm open for freelance opportunities and collaborations.
       </p>
-      <div className="flex-row space-x-4">
+      <div className="flex flex-wrap justify-center gap-4">
         <a
           href="mailto:adrien.figard@gmail.com"
-          className="inline-block border border-black px-6 py-3 rounded-full hover:bg-black hover:text-white transition"
+          className="inline-flex items-center border border-black px-6 py-3 rounded-full hover:bg-emerald-600 hover:text-white hover:border-white transition"
         >
-          Email
+          <FaEnvelope className="mr-2" />
+          <span>Email</span>
         </a>
         <a
           href="https://github.com/afigard"
-          className="inline-block border border-black px-6 py-3 rounded-full hover:bg-black hover:text-white transition"
+          className="inline-flex items-center border border-black px-6 py-3 rounded-full hover:bg-emerald-600 hover:text-white hover:border-white transition"
           target="_blank"
           rel="noopener noreferrer"
         >
-          GitHub
+          <FaGithub className="mr-2" />
+          <span>GitHub</span>
         </a>
         <a
           href="https://www.malt.fr/profile/afigard"
-          className="inline-block border border-black px-6 py-3 rounded-full hover:bg-black hover:text-white transition"
+          className="inline-flex items-center border border-black px-6 py-3 rounded-full hover:bg-emerald-600 hover:text-white hover:border-white transition"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Malt
+          <SiMalt className="mr-2" />
+          <span>Malt</span>
         </a>
       </div>
     </section>
