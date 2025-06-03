@@ -14,7 +14,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Adrien FIGARD",
-  description: "Adrien Figard's portfolio",
+  description:
+    "Full-stack engineer helping startups and agencies build modern web apps.",
+  openGraph: {
+    title: "Adrien FIGARD",
+    description:
+      "Full-stack engineer helping startups and agencies build modern web apps.",
+    url: "https://afigard.github.io",
+    siteName: "Adrien Figard Portfolio",
+    images: [
+      {
+        url: "https://afigard.github.io/openGraph.png",
+        width: 1200,
+        height: 630,
+        alt: "Adrien FIGARD",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
