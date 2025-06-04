@@ -40,14 +40,31 @@ export default function Hero() {
         className="absolute bottom-6 right-6 border-b-4 border-r-4 border-black"
       />
 
-      <motion.p
-        initial={{ opacity: 0, y: -15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="absolute top-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-black"
-      >
-        Full-stack Developer
-      </motion.p>
+      <AnimatePresence mode="wait">
+        {isHidden ? (
+          <motion.p
+            key="about"
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.5 }}
+            className="absolute top-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-black"
+          >
+            About Me
+          </motion.p>
+        ) : (
+          <motion.p
+            key="role"
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.5 }}
+            className="absolute top-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-black"
+          >
+            Full-stack Developer
+          </motion.p>
+        )}
+      </AnimatePresence>
 
       <div className="h-full w-full px-6 flex flex-col items-center justify-center text-center space-y-6">
         <motion.h1
@@ -63,9 +80,7 @@ export default function Hero() {
 
         <motion.button
           onClick={() => setIsHidden(!isHidden)}
-          whileHover={{ cursor: "pointer" }}
-          whileTap={{ scale: 0.95 }}
-          className="text-4xl font-bold text-black hover:text-amber-600 transition"
+          className="text-4xl font-bold text-black cursor-pointer hover:text-amber-600 transition"
         >
           {isHidden ? "−" : "+"}
         </motion.button>
