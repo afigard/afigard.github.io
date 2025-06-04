@@ -63,7 +63,7 @@ export default function Hero() {
 
         <motion.button
           onClick={() => setIsHidden(!isHidden)}
-          whileHover={{ scale: 1.1, cursor: "pointer" }}
+          whileHover={{ cursor: "pointer" }}
           whileTap={{ scale: 0.95 }}
           className="text-4xl font-bold text-black hover:text-amber-600 transition"
         >
@@ -79,7 +79,7 @@ export default function Hero() {
                   animate={{ y: "-80%", opacity: 1 }}
                   exit={{ y: "-350%", opacity: 0 }}
                   transition={{ duration: 0.8 }}
-                  className="absolute top-0 left-1/2 transform -translate-x-1/2 md:left-1/4 md:-translate-x-1/2 max-w-xl text-center md:text-left text-sm md:text-[2vw] px-4 text-black"
+                  className="absolute top-0 left-1/2 transform -translate-x-1/2 md:left-1/4 md:-translate-x-1/2 max-w-xl text-center md:text-left text-sm md:text-[2vw] font-semibold px-4 text-black"
                 >
                   <p>
                     I thrive on turning ideas into high-performance, cleanly
