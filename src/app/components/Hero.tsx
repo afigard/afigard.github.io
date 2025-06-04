@@ -40,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="absolute top-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-gray-900"
+          className="absolute top-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-black"
         >
           Full-stack Developer
         </motion.p>
@@ -60,9 +60,9 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-gray-900 border border-black px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white hover:border-white transition"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-black border border-black px-6 py-3 rounded-full hover:bg-black hover:text-white hover:border-white transition"
       >
-        View My Work
+        View My Work &#129134;
       </motion.a>
     </section>
   );
