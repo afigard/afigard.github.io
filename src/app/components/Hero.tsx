@@ -91,7 +91,7 @@ export default function Hero() {
               <>
                 <motion.div
                   initial={{ y: "-450%", x: "0%", opacity: 0 }}
-                  animate={{ y: "-80%", opacity: 1 }}
+                  animate={{ y: "-82%", opacity: 1 }}
                   exit={{ y: "-350%", opacity: 0 }}
                   transition={{ duration: 0.8 }}
                   className="absolute top-0 left-1/2 transform -translate-x-1/2 md:left-1/4 md:-translate-x-1/2 max-w-xl text-center md:text-left text-sm md:text-[2vw] font-semibold px-4 text-black"
@@ -136,10 +136,10 @@ export default function Hero() {
 
                 <motion.div
                   initial={{ y: "-450%", x: "0%", opacity: 0 }}
-                  animate={{ y: "-70%", opacity: 1 }}
+                  animate={{ y: "-70.5%", opacity: 1 }}
                   exit={{ y: "-350%", opacity: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="absolute top-0 right-1/2 md:top-0 md:right-1/4 translate-x-1/2 w-[120px] h-[120px] md:w-[20vw] md:h-[40vw] bg-black"
+                  className="absolute top-0 right-1/2 md:top-0 md:right-1/4 translate-x-1/2 w-[120px] h-[120px] md:w-[25vw] md:h-[40vw] bg-black"
                 />
               </>
             )}
