@@ -96,16 +96,16 @@ export default function Hero() {
           {isHidden ? "−" : "+"}
         </motion.button>
 
-        <div className="relative h-[0px] md:h-[0px] w-full">
+        <div className="relative w-full">
           <AnimatePresence>
             {isHidden && (
               <>
                 <motion.div
-                  initial={{ y: "-450%", x: "0%", opacity: 0 }}
-                  animate={{ y: "-93%", opacity: 1 }}
-                  exit={{ y: "-350%", opacity: 0 }}
+                  initial={{ y: "-150vw", opacity: 0 }}
+                  animate={{ y: "-20vw", opacity: 1 }}
+                  exit={{ y: "-100vw", opacity: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="absolute top-0 left-1/2 transform -translate-x-1/2 md:left-1/4 md:-translate-x-1/2 max-w-xl text-center md:text-left text-sm md:text-[1.5vw] font-semibold px-4 text-black"
+                  className="absolute left-1/4 transform -translate-x-1/2 max-w-[30vw] text-left text-[1.5vw] font-semibold text-black"
                 >
                   <p>
                     I thrive on turning ideas into high-performance, cleanly
@@ -116,17 +116,17 @@ export default function Hero() {
                     worldwide.
                   </p>
 
-                  <div className="flex flex-wrap justify-left gap-4 mt-19 md:text-[1vw]">
+                  <div className="flex flex-wrap justify-left gap-[1vw] mt-[3vw] text-[1vw]">
                     <a
                       href="mailto:adrien.figard@gmail.com"
-                      className="inline-flex items-center border border-black px-6 py-3 rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
+                      className="inline-flex items-center border-[0.15vw] border-black px-[1.3vw] py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
                     >
-                      <FaEnvelope className="mr-2" />
+                      <FaEnvelope className="mr-[0.5vw]" />
                       <span>Email</span>
                     </a>
                     <a
                       href="https://github.com/afigard"
-                      className="inline-flex items-center border border-black px-6 py-3 rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
+                      className="inline-flex items-center border-[0.15vw] border-black px-[1.3vw] py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -135,7 +135,7 @@ export default function Hero() {
                     </a>
                     <a
                       href="https://www.malt.fr/profile/afigard"
-                      className="inline-flex items-center border border-black px-6 py-3 rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
+                      className="inline-flex items-center border-[0.15vw] border-black px-[1.3vw] py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -227,7 +227,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
-        className="absolute bottom-[12vw] md:bottom-[2vw] left-1/2 -translate-x-1/2 text-[4vw] md:text-[1vw] tracking-wide text-black border border-black px-[5vw] md:px-[1.25vw] py-[2.5vw] md:py-[0.75vw] rounded-full hover:bg-black hover:text-white hover:border-white transition"
+        className="absolute bottom-[12vw] md:bottom-[2vw] left-1/2 -translate-x-1/2 text-[4vw] md:text-[1vw] tracking-wide text-black border-[0.5vw] md:border-[0.1vw] border-black px-[5vw] md:px-[1.25vw] py-[2.5vw] md:py-[0.75vw] rounded-full hover:bg-black hover:text-white hover:border-white transition"
       >
         View My Work &#129134;
       </motion.a>
