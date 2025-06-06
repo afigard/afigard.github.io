@@ -3,7 +3,17 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
-import { SiMalt } from "react-icons/si";
+import {
+  SiMalt,
+  SiNextdotjs,
+  SiPostgresql,
+  SiReact,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiTypescript,
+  SiAmazonwebservices,
+  SiApachenifi,
+} from "react-icons/si";
 
 export default function Hero() {
   const [isHidden, setIsHidden] = useState(false);
@@ -91,10 +101,10 @@ export default function Hero() {
               <>
                 <motion.div
                   initial={{ y: "-450%", x: "0%", opacity: 0 }}
-                  animate={{ y: "-82%", opacity: 1 }}
+                  animate={{ y: "-93%", opacity: 1 }}
                   exit={{ y: "-350%", opacity: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="absolute top-0 left-1/2 transform -translate-x-1/2 md:left-1/4 md:-translate-x-1/2 max-w-xl text-center md:text-left text-sm md:text-[2vw] font-semibold px-4 text-black"
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="absolute top-0 left-1/2 transform -translate-x-1/2 md:left-1/4 md:-translate-x-1/2 max-w-xl text-center md:text-left text-sm md:text-[1.5vw] font-semibold px-4 text-black"
                 >
                   <p>
                     I thrive on turning ideas into high-performance, cleanly
@@ -135,12 +145,76 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ y: "-450%", x: "0%", opacity: 0 }}
-                  animate={{ y: "-70.5%", opacity: 1 }}
-                  exit={{ y: "-350%", opacity: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="absolute top-0 right-1/2 md:top-0 md:right-1/4 translate-x-1/2 w-[120px] h-[120px] md:w-[25vw] md:h-[40vw] bg-black"
-                />
+                  initial={{ y: "-450%", x: "0%", opacity: 0, scale: 0.8 }}
+                  animate={{ y: "-73.5%", opacity: 1, scale: 1 }}
+                  exit={{ y: "-350%", opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                  className="absolute top-0 right-1/2 md:top-0 md:right-1/4 translate-x-1/2 w-[320px] h-[320px] md:w-[35vw] md:h-[35vw] bg-black p-4 grid grid-cols-3 auto-rows-auto gap-3 overflow-auto rounded-xl shadow-2xl"
+                >
+                  {[
+                    {
+                      tech: "Next.js",
+                      icon: <SiNextdotjs className="inline mr-2 text-xl" />,
+                      desc: "React framework",
+                      span: "col-span-2 row-span-1",
+                    },
+                    {
+                      tech: "PostgreSQL",
+                      icon: <SiPostgresql className="inline mr-2 text-xl" />,
+                      desc: "SQL database",
+                      span: "col-span-1 row-span-2",
+                    },
+                    {
+                      tech: "React.js",
+                      icon: <SiReact className="inline mr-2 text-xl" />,
+                      desc: "UI library",
+                      span: "col-span-1 row-span-1",
+                    },
+                    {
+                      tech: "Tailwind CSS",
+                      icon: <SiTailwindcss className="inline mr-2 text-xl" />,
+                      desc: "Utility CSS",
+                      span: "col-span-1 row-span-1",
+                    },
+                    {
+                      tech: "Node.js",
+                      icon: <SiNodedotjs className="inline mr-2 text-xl" />,
+                      desc: "Backend runtime",
+                      span: "col-span-2 row-span-1",
+                    },
+                    {
+                      tech: "TypeScript",
+                      icon: <SiTypescript className="inline mr-2 text-xl" />,
+                      desc: "Typed JS",
+                      span: "col-span-1 row-span-1",
+                    },
+                    {
+                      tech: "AWS",
+                      icon: (
+                        <SiAmazonwebservices className="inline mr-2 text-xl" />
+                      ),
+                      desc: "Cloud hosting",
+                      span: "col-span-2 row-span-1",
+                    },
+                    {
+                      tech: "NiFi",
+                      icon: <SiApachenifi className="inline mr-2 text-xl" />,
+                      desc: "Data pipelines",
+                      span: "col-span-1 row-span-1",
+                    },
+                  ].map(({ tech, icon, desc, span }) => (
+                    <motion.div
+                      key={tech}
+                      className={`bg-white text-black rounded-lg p-4 flex flex-col justify-center ${span} shadow-md hover:scale-101 hover:bg-amber-50 transition-transform`}
+                    >
+                      <div className="text-lg font-bold">
+                        {icon}
+                        {tech}
+                      </div>
+                      <div className="text-sm text-gray-500">{desc}</div>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </>
             )}
           </AnimatePresence>
