@@ -17,6 +17,7 @@ import {
 
 export default function Hero() {
   const [isHidden, setIsHidden] = useState(false);
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -24,73 +25,73 @@ export default function Hero() {
         variants={{
           hidden: { width: 0, height: 0, opacity: 0 },
           visible: {
-            width: "3vw",
-            height: "3vw",
+            width: isMobile ? "10vw" : "3vw",
+            height: isMobile ? "10vw" : "3vw",
             opacity: 1,
             transition: { duration: 0.8 },
           },
         }}
         initial="hidden"
         animate="visible"
-        className="absolute top-6 left-6 border-t-4 border-l-4 border-black"
+        className="absolute top-[3vw] md:top-[1.5vw] left-[3vw] md:left-[1.5vw] border-t-[1vw] md:border-t-[0.25vw] border-l-[1vw] md:border-l-[0.25vw] border-black"
       />
 
       <motion.div
         variants={{
           hidden: { width: 0, height: 0, opacity: 0 },
           visible: {
-            width: "3vw",
-            height: "3vw",
+            width: isMobile ? "10vw" : "3vw",
+            height: isMobile ? "10vw" : "3vw",
             opacity: 1,
             transition: { duration: 0.8 },
           },
         }}
         initial="hidden"
         animate="visible"
-        className="absolute bottom-6 right-6 border-b-4 border-r-4 border-black"
+        className="absolute bottom-[3vw] md:bottom-[1.5vw] right-[3vw] md:right-[1.5vw] border-b-[1vw] md:border-b-[0.25vw] border-r-[1vw] md:border-r-[0.25vw] border-black"
       />
 
       <AnimatePresence mode="wait">
         {isHidden ? (
           <motion.p
             key="about"
-            initial={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, y: "-1vw" }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
+            exit={{ opacity: 0, y: "-1vw" }}
             transition={{ duration: 0.5 }}
-            className="absolute top-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-black"
+            className="absolute top-[10vw] md:top-[2vw] left-1/2 -translate-x-1/2 text-[4vw] md:text-[1vw] tracking-wide text-black"
           >
             About Me
           </motion.p>
         ) : (
           <motion.p
             key="role"
-            initial={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, y: "-1vw" }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
+            exit={{ opacity: 0, y: "-1vw" }}
             transition={{ duration: 0.5 }}
-            className="absolute top-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-black"
+            className="absolute top-[10vw] md:top-[2vw] left-1/2 -translate-x-1/2 text-[4vw] md:text-[1vw] tracking-wide text-black"
           >
             Full-stack Developer
           </motion.p>
         )}
       </AnimatePresence>
 
-      <div className="h-full w-full px-6 flex flex-col items-center justify-center text-center space-y-6">
+      <div className="h-full w-full px-[8vw] md:px-[4vw] flex flex-col items-center justify-center text-center space-y-[12vw] md:space-y-[1vw]">
         <motion.h1
           animate={
             isHidden
               ? { x: "-150%", opacity: 0, transition: { duration: 0.8 } }
               : { x: 0, opacity: 1, transition: { duration: 0.8 } }
           }
-          className="w-full text-6xl md:text-[12vw] font-extrabold leading-none"
+          className="w-full text-[20vw] md:text-[12vw] font-extrabold leading-none"
         >
           ADRIEN FIGARD
         </motion.h1>
 
         <motion.button
           onClick={() => setIsHidden(!isHidden)}
-          className="text-4xl font-bold text-black cursor-pointer hover:text-amber-600 transition"
+          className="text-[0vw] md:text-[3vw] font-bold text-black cursor-pointer hover:text-amber-600 transition"
         >
           {isHidden ? "−" : "+"}
         </motion.button>
@@ -226,7 +227,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-xl md:text-[1vw] tracking-wide text-black border border-black px-6 py-3 rounded-full hover:bg-black hover:text-white hover:border-white transition"
+        className="absolute bottom-[12vw] md:bottom-[2vw] left-1/2 -translate-x-1/2 text-[4vw] md:text-[1vw] tracking-wide text-black border border-black px-[5vw] md:px-[1.25vw] py-[2.5vw] md:py-[0.75vw] rounded-full hover:bg-black hover:text-white hover:border-white transition"
       >
         View My Work &#129134;
       </motion.a>
