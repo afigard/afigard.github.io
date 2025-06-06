@@ -39,18 +39,18 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen w-full flex flex-col items-center justify-center py-16 px-4"
+      className="min-h-screen w-full flex flex-col items-center justify-center"
     >
-      <div className="w-full max-w-6xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-12 text-center">
+      <div className="w-full max-w-[90vw]">
+        <h2 className="text-3xl font-semibold mb-[2.5vw] text-center">
           Selected Projects
         </h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-[1.5vw]">
           {projects.map(({ title, description, stack, link, icon }) => (
             <a
               href={link}
               key={title}
-              className="group border rounded-2xl p-6 hover:shadow-xl transition hover:border-emerald-100 h-full"
+              className="group border rounded-2xl p-[6vw] hover:shadow-xl transition hover:border-emerald-100 h-full"
               target="_blank"
               rel="noopener noreferrer"
             >
