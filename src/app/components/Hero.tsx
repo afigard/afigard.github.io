@@ -102,7 +102,7 @@ export default function Hero() {
               <>
                 <motion.div
                   initial={{ y: "-150vw", opacity: 0 }}
-                  animate={{ y: "-20vw", opacity: 1 }}
+                  animate={{ y: "-19.25vw", opacity: 1 }}
                   exit={{ y: "-100vw", opacity: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className="absolute left-1/4 transform -translate-x-1/2 max-w-[30vw] text-left text-[1.5vw] font-semibold text-black"
@@ -130,7 +130,7 @@ export default function Hero() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaGithub className="mr-2" />
+                      <FaGithub className="mr-[0.5vw]" />
                       <span>GitHub</span>
                     </a>
                     <a
@@ -139,80 +139,94 @@ export default function Hero() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <SiMalt className="mr-2" />
+                      <SiMalt className="mr-[0.5vw]" />
                       <span>Malt</span>
                     </a>
                   </div>
                 </motion.div>
 
                 <motion.div
-                  initial={{ y: "-450%", x: "0%", opacity: 0, scale: 0.8 }}
-                  animate={{ y: "-73.5%", opacity: 1, scale: 1 }}
-                  exit={{ y: "-350%", opacity: 0, scale: 0.8 }}
+                  initial={{ y: "-150vw", opacity: 0 }}
+                  animate={{ y: "-26.7vw", opacity: 1 }}
+                  exit={{ y: "-100vw", opacity: 0 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                  className="absolute top-0 right-1/2 md:top-0 md:right-1/4 translate-x-1/2 w-[320px] h-[320px] md:w-[35vw] md:h-[35vw] bg-black p-4 grid grid-cols-3 auto-rows-auto gap-3 overflow-auto rounded-xl shadow-2xl"
+                  className="absolute right-1/4 translate-x-7/13 w-[35vw] h-[35vw] bg-black p-[1vw] grid grid-cols-3 auto-rows-auto gap-[0.75vw] overflow-auto rounded-[1vw] shadow-[0_0.4vw_0.6vw_rgba(0,0,0,0.25)]"
                 >
                   {[
                     {
                       tech: "Next.js",
-                      icon: <SiNextdotjs className="inline mr-2 text-xl" />,
+                      icon: (
+                        <SiNextdotjs className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                      ),
                       desc: "React framework",
                       span: "col-span-2 row-span-1",
                     },
                     {
                       tech: "PostgreSQL",
-                      icon: <SiPostgresql className="inline mr-2 text-xl" />,
+                      icon: (
+                        <SiPostgresql className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                      ),
                       desc: "SQL database",
                       span: "col-span-1 row-span-2",
                     },
                     {
                       tech: "React.js",
-                      icon: <SiReact className="inline mr-2 text-xl" />,
+                      icon: (
+                        <SiReact className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                      ),
                       desc: "UI library",
                       span: "col-span-1 row-span-1",
                     },
                     {
                       tech: "Tailwind CSS",
-                      icon: <SiTailwindcss className="inline mr-2 text-xl" />,
+                      icon: (
+                        <SiTailwindcss className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                      ),
                       desc: "Utility CSS",
                       span: "col-span-1 row-span-1",
                     },
                     {
                       tech: "Node.js",
-                      icon: <SiNodedotjs className="inline mr-2 text-xl" />,
+                      icon: (
+                        <SiNodedotjs className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                      ),
                       desc: "Backend runtime",
                       span: "col-span-2 row-span-1",
                     },
                     {
                       tech: "TypeScript",
-                      icon: <SiTypescript className="inline mr-2 text-xl" />,
+                      icon: (
+                        <SiTypescript className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                      ),
                       desc: "Typed JS",
                       span: "col-span-1 row-span-1",
                     },
                     {
                       tech: "AWS",
                       icon: (
-                        <SiAmazonwebservices className="inline mr-2 text-xl" />
+                        <SiAmazonwebservices className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
                       ),
                       desc: "Cloud hosting",
                       span: "col-span-2 row-span-1",
                     },
                     {
                       tech: "NiFi",
-                      icon: <SiApachenifi className="inline mr-2 text-xl" />,
+                      icon: (
+                        <SiApachenifi className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                      ),
                       desc: "Data pipelines",
                       span: "col-span-1 row-span-1",
                     },
                   ].map(({ tech, icon, desc, span }) => (
                     <motion.div
                       key={tech}
-                      className={`bg-white text-black rounded-lg p-4 flex flex-col justify-center ${span} shadow-md hover:scale-101 hover:bg-amber-50 transition-transform`}
+                      className={`bg-white text-black rounded-[0.5vw] p-[1vw] flex flex-col justify-center ${span} hover:scale-103 hover:bg-amber-50 transition-transform`}
                     >
-                      <div className="text-lg font-bold">
+                      <div className="text-[1vw] font-bold">
                         {icon}
                         {tech}
                       </div>
-                      <div className="text-sm text-gray-500">{desc}</div>
+                      <div className="text-[0.75vw] text-gray-500">{desc}</div>
                     </motion.div>
                   ))}
                 </motion.div>
