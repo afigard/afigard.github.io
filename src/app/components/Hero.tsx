@@ -77,12 +77,22 @@ export default function Hero() {
         )}
       </AnimatePresence>
 
-      <div className="h-full w-full px-[8vw] md:px-[4vw] flex flex-col items-center justify-center text-center space-y-[12vw] md:space-y-[1vw]">
+      <div className="h-full w-full px-[8vw] md:px-[4vw] flex flex-col items-center justify-center text-center space-y-[8vw] md:space-y-[2vw] md:space-y-[1vw]">
         <motion.h1
           animate={
             isHidden
-              ? { x: "-150%", opacity: 0, transition: { duration: 0.8 } }
-              : { x: 0, opacity: 1, transition: { duration: 0.8 } }
+              ? {
+                  x: isMobile ? 0 : "-150%",
+                  opacity: 0,
+                  transition: isMobile ? { duration: 0.1 } : { duration: 0.8 },
+                }
+              : {
+                  x: 0,
+                  opacity: 1,
+                  transition: isMobile
+                    ? { duration: 0.8, delay: 0.4 }
+                    : { duration: 0.8 },
+                }
           }
           className="w-full text-[20vw] md:text-[12vw] font-extrabold leading-none"
         >
@@ -91,7 +101,7 @@ export default function Hero() {
 
         <motion.button
           onClick={() => setIsHidden(!isHidden)}
-          className="text-[0vw] md:text-[3vw] font-bold text-black cursor-pointer hover:text-amber-600 transition"
+          className="text-[10vw] md:text-[3vw] font-bold text-black cursor-pointer hover:text-amber-600 transition"
         >
           {isHidden ? "−" : "+"}
         </motion.button>
@@ -101,11 +111,11 @@ export default function Hero() {
             {isHidden && (
               <>
                 <motion.div
-                  initial={{ y: "-150vw", opacity: 0 }}
-                  animate={{ y: "-19.25vw", opacity: 1 }}
-                  exit={{ y: "-100vw", opacity: 0 }}
+                  initial={{ y: isMobile ? "0vw" : "-150vw", opacity: 0 }}
+                  animate={{ y: isMobile ? "-10vw" : "-20.25vw", opacity: 1 }}
+                  exit={{ y: isMobile ? "0vw" : "-100vw", opacity: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="absolute left-1/4 transform -translate-x-1/2 max-w-[30vw] text-left text-[1.5vw] font-semibold text-black"
+                  className="absolute left-[0vw] md:left-1/4 transform md:-translate-x-1/2 max-w-[120vw] md:max-w-[30vw] text-center md:text-left text-[4vw] md:text-[1.5vw] font-semibold text-black"
                 >
                   <p>
                     I thrive on turning ideas into high-performance, cleanly
@@ -116,17 +126,17 @@ export default function Hero() {
                     worldwide.
                   </p>
 
-                  <div className="flex flex-wrap justify-left gap-[1vw] mt-[3vw] text-[1vw]">
+                  <div className="flex flex-wrap justify-center md:justify-start gap-[3vw] md:gap-[1vw] mt-[7vw] md:mt-[3vw] text-[4vw] md:text-[1vw]">
                     <a
                       href="mailto:adrien.figard@gmail.com"
-                      className="inline-flex items-center border-[0.15vw] border-black px-[1.3vw] py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
+                      className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
                     >
                       <FaEnvelope className="mr-[0.5vw]" />
                       <span>Email</span>
                     </a>
                     <a
                       href="https://github.com/afigard"
-                      className="inline-flex items-center border-[0.15vw] border-black px-[1.3vw] py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
+                      className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -135,7 +145,7 @@ export default function Hero() {
                     </a>
                     <a
                       href="https://www.malt.fr/profile/afigard"
-                      className="inline-flex items-center border-[0.15vw] border-black px-[1.3vw] py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
+                      className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -146,17 +156,21 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.div
-                  initial={{ y: "-150vw", opacity: 0 }}
-                  animate={{ y: "-26.7vw", opacity: 1 }}
-                  exit={{ y: "-100vw", opacity: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                  className="absolute right-1/4 translate-x-7/13 w-[35vw] h-[35vw] bg-black p-[1vw] grid grid-cols-3 auto-rows-auto gap-[0.75vw] overflow-auto rounded-[1vw] shadow-[0_0.4vw_0.6vw_rgba(0,0,0,0.25)]"
+                  initial={{ y: isMobile ? "-131vw" : "-150vw", opacity: 0 }}
+                  animate={{ y: isMobile ? "-123vw" : "-27.7vw", opacity: 1 }}
+                  exit={{ y: isMobile ? "-131vw" : "-100vw", opacity: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: isMobile ? 0 : 0.2,
+                    ease: "easeOut",
+                  }}
+                  className="absolute right-[0vw] md:right-1/4 md:translate-x-7/13 w-[85vw] md:w-[35vw] h-[100vw] md:h-[35vw] bg-black p-[3vw] md:p-[1vw] grid grid-cols-3 auto-rows-auto gap-[1.5vw] md:gap-[0.75vw] overflow-auto rounded-[3vw] md:rounded-[1vw] shadow-[0_0.4vw_0.6vw_rgba(0,0,0,0.25)]"
                 >
                   {[
                     {
                       tech: "Next.js",
                       icon: (
-                        <SiNextdotjs className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                        <SiNextdotjs className="inline mr-[1vw] md:mr-[0.5vw] mb-[0.4vw] md:mb-[0.2vw] text-[2.5vw] md:text-[1vw]" />
                       ),
                       desc: "React framework",
                       span: "col-span-2 row-span-1",
@@ -164,7 +178,7 @@ export default function Hero() {
                     {
                       tech: "PostgreSQL",
                       icon: (
-                        <SiPostgresql className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                        <SiPostgresql className="inline mr-[1vw] md:mr-[0.5vw] mb-[0.4vw] md:mb-[0.2vw] text-[2.5vw] md:text-[1vw]" />
                       ),
                       desc: "SQL database",
                       span: "col-span-1 row-span-2",
@@ -172,7 +186,7 @@ export default function Hero() {
                     {
                       tech: "React.js",
                       icon: (
-                        <SiReact className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                        <SiReact className="inline mr-[1vw] md:mr-[0.5vw] mb-[0.4vw] md:mb-[0.2vw] text-[2.5vw] md:text-[1vw]" />
                       ),
                       desc: "UI library",
                       span: "col-span-1 row-span-1",
@@ -180,7 +194,7 @@ export default function Hero() {
                     {
                       tech: "Tailwind CSS",
                       icon: (
-                        <SiTailwindcss className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                        <SiTailwindcss className="inline mr-[1vw] md:mr-[0.5vw] mb-[0.4vw] md:mb-[0.2vw] text-[2.5vw] md:text-[1vw]" />
                       ),
                       desc: "Utility CSS",
                       span: "col-span-1 row-span-1",
@@ -188,7 +202,7 @@ export default function Hero() {
                     {
                       tech: "Node.js",
                       icon: (
-                        <SiNodedotjs className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                        <SiNodedotjs className="inline mr-[1vw] md:mr-[0.5vw] mb-[0.4vw] md:mb-[0.2vw] text-[2.5vw] md:text-[1vw]" />
                       ),
                       desc: "Backend runtime",
                       span: "col-span-2 row-span-1",
@@ -196,7 +210,7 @@ export default function Hero() {
                     {
                       tech: "TypeScript",
                       icon: (
-                        <SiTypescript className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                        <SiTypescript className="inline mr-[1vw] md:mr-[0.5vw] mb-[0.4vw] md:mb-[0.2vw] text-[2.5vw] md:text-[1vw]" />
                       ),
                       desc: "Typed JS",
                       span: "col-span-1 row-span-1",
@@ -204,7 +218,7 @@ export default function Hero() {
                     {
                       tech: "AWS",
                       icon: (
-                        <SiAmazonwebservices className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                        <SiAmazonwebservices className="inline mr-[1vw] md:mr-[0.5vw] mb-[0.4vw] md:mb-[0.2vw] text-[2.5vw] md:text-[1vw]" />
                       ),
                       desc: "Cloud hosting",
                       span: "col-span-2 row-span-1",
@@ -212,7 +226,7 @@ export default function Hero() {
                     {
                       tech: "NiFi",
                       icon: (
-                        <SiApachenifi className="inline mr-[0.5vw] mb-[0.2vw] text-[1vw]" />
+                        <SiApachenifi className="inline mr-[1vw] md:mr-[0.5vw] mb-[0.4vw] md:mb-[0.2vw] text-[2.5vw] md:text-[1vw]" />
                       ),
                       desc: "Data pipelines",
                       span: "col-span-1 row-span-1",
@@ -220,13 +234,15 @@ export default function Hero() {
                   ].map(({ tech, icon, desc, span }) => (
                     <motion.div
                       key={tech}
-                      className={`bg-white text-black rounded-[0.5vw] p-[1vw] flex flex-col justify-center ${span} hover:scale-103 hover:bg-amber-50 transition-transform`}
+                      className={`bg-white text-black rounded-[2vw] md:rounded-[0.5vw] p-[1vw] flex flex-col justify-center ${span} hover:scale-103 hover:bg-amber-50 transition-transform`}
                     >
-                      <div className="text-[1vw] font-bold">
+                      <div className="text-[3vw] md:text-[1vw] font-bold">
                         {icon}
                         {tech}
                       </div>
-                      <div className="text-[0.75vw] text-gray-500">{desc}</div>
+                      <div className="text-[2vw] md:text-[0.75vw] text-gray-500">
+                        {desc}
+                      </div>
                     </motion.div>
                   ))}
                 </motion.div>
