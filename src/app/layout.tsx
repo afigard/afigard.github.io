@@ -15,11 +15,11 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Adrien FIGARD",
   description:
-    "Full-stack engineer helping startups and agencies build modern web apps.",
+    "Full-stack developer helping startups and agencies build modern web apps.",
   openGraph: {
     title: "Adrien FIGARD",
     description:
-      "Full-stack engineer helping startups and agencies build modern web apps.",
+      "Full-stack developer helping startups and agencies build modern web apps.",
     url: "https://afigard.github.io",
     siteName: "Adrien Figard Portfolio",
     images: [
