@@ -2,7 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { FaEnvelope, FaGithub } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
 import {
   SiMalt,
   SiNextdotjs,
@@ -140,7 +141,7 @@ export default function Hero() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaGithub className="mr-[0.5vw]" />
+                      <FiGithub className="mr-[0.5vw]" />
                       <span>GitHub</span>
                     </a>
                     <a
