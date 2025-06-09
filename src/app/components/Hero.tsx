@@ -54,16 +54,19 @@ export default function Hero() {
 
       <AnimatePresence mode="wait">
         {isHidden ? (
-          <motion.p
+          <motion.div
             key="about"
-            initial={{ opacity: 0, y: "-1vw" }}
+            initial={{ opacity: 0, y: "-80vw" }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-1vw" }}
+            exit={{ opacity: 0, y: "-100vw" }}
             transition={{ duration: 0.5 }}
-            className="absolute top-[10vw] md:top-[2vw] left-1/2 -translate-x-1/2 text-[4vw] md:text-[1vw] tracking-wide text-black"
+            className="absolute top-[10vw] md:top-[2vw] w-screen px-[26vw] flex justify-between text-[4vw] md:text-[1vw] tracking-wide text-black"
           >
-            About Me
-          </motion.p>
+            <p className="block md:hidden ml-[8vw]">My Stack &</p>
+            <p className="hidden md:block">About Me</p>
+            <p className="block md:hidden mr-[8vw]">Links</p>
+            <p className="hidden md:block">My Stack</p>
+          </motion.div>
         ) : (
           <motion.p
             key="role"
@@ -130,12 +133,12 @@ export default function Hero() {
               <>
                 <motion.div
                   initial={{ y: isMobile ? "0vw" : "-150vw", opacity: 0 }}
-                  animate={{ y: isMobile ? "-10vw" : "-27.75vw", opacity: 1 }}
+                  animate={{ y: isMobile ? "-10vw" : "-28.4vw", opacity: 1 }}
                   exit={{ y: isMobile ? "0vw" : "-100vw", opacity: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="absolute left-[4.2vw] md:left-1/4 transform md:-translate-x-1/2 max-w-[120vw] md:max-w-[30vw] mt-[10vw] md:mt-[0vw] text-center md:text-left text-[4vw] md:text-[1.5vw] font-semibold text-black"
+                  className="absolute left-[4.2vw] md:left-[25vw] transform md:-translate-x-1/2 max-w-[120vw] md:max-w-[30vw] mt-[10vw] md:mt-[0vw] text-center md:text-left text-[4vw] md:text-[1.5vw] font-semibold text-black"
                 >
-                  <div className="mb-[7vw]">
+                  <div className="mb-[8vw]">
                     <a
                       href="#"
                       onClick={() => setIsHidden(false)}
@@ -153,7 +156,7 @@ export default function Hero() {
                     worldwide.
                   </p>
 
-                  <div className="flex flex-wrap justify-center md:justify-start gap-[3vw] md:gap-[1vw] mt-[7vw] md:mt-[3vw] text-[4vw] md:text-[1vw]">
+                  <div className="flex flex-wrap justify-center md:justify-start gap-[3vw] md:gap-[1vw] mt-[7vw] md:mt-[7.9vw] text-[4vw] md:text-[1vw]">
                     <a
                       href="mailto:adrien.figard@gmail.com"
                       className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
@@ -191,7 +194,7 @@ export default function Hero() {
                     delay: isMobile ? 0 : 0.2,
                     ease: "easeOut",
                   }}
-                  className="absolute right-[0vw] md:right-[26.8vw] md:translate-x-7/13 w-[85vw] md:w-[35vw] h-[100vw] md:h-[35vw] mt-[10vw] md:mt-[0vw] bg-black p-[3vw] md:p-[1vw] grid grid-cols-3 auto-rows-auto gap-[1.5vw] md:gap-[0.75vw] overflow-auto rounded-[3vw] md:rounded-[1vw] shadow-[0_0.4vw_0.6vw_rgba(0,0,0,0.25)]"
+                  className="absolute right-[0vw] md:right-[25vw] md:translate-x-7/13 w-[85vw] md:w-[35vw] h-[100vw] md:h-[35vw] mt-[10vw] md:mt-[0vw] bg-black p-[3vw] md:p-[1vw] grid grid-cols-3 auto-rows-auto gap-[1.5vw] md:gap-[0.75vw] overflow-auto rounded-[3vw] md:rounded-[1vw] shadow-[0_0.4vw_0.6vw_rgba(0,0,0,0.25)]"
                 >
                   {[
                     {
