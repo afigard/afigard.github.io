@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       "Full-stack developer helping startups and agencies build modern web apps.",
     url: "https://afigard.github.io",
-    siteName: "ADRIEN Figard Portfolio",
+    siteName: "Adrien Figard Portfolio",
     images: [
       {
         url: "https://afigard.github.io/openGraph.png",
