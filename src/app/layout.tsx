@@ -13,21 +13,21 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adrien FIGARD",
+  title: "ADRIEN FIGARD",
   description:
     "Full-stack developer helping startups and agencies build modern web apps.",
   openGraph: {
-    title: "Adrien FIGARD",
+    title: "ADRIEN FIGARD",
     description:
       "Full-stack developer helping startups and agencies build modern web apps.",
     url: "https://afigard.github.io",
-    siteName: "Adrien Figard Portfolio",
+    siteName: "ADRIEN Figard Portfolio",
     images: [
       {
         url: "https://afigard.github.io/openGraph.png",
         width: 1200,
         height: 630,
-        alt: "Adrien FIGARD",
+        alt: "ADRIEN FIGARD",
       },
     ],
     type: "website",
