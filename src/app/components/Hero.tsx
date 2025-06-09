@@ -101,10 +101,10 @@ export default function Hero() {
         </motion.h1>
 
         <motion.button
-          onClick={() => setIsHidden(!isHidden)}
+          onClick={() => setIsHidden(true)}
           className="text-[10vw] md:text-[3vw] font-bold text-black cursor-pointer hover:text-amber-600 transition"
         >
-          {isHidden ? "−" : "+"}
+          {isHidden ? "\u00A0" : "+"}
         </motion.button>
 
         <div className="relative w-full">
@@ -113,12 +113,21 @@ export default function Hero() {
               <>
                 <motion.div
                   initial={{ y: isMobile ? "0vw" : "-150vw", opacity: 0 }}
-                  animate={{ y: isMobile ? "-10vw" : "-20.25vw", opacity: 1 }}
+                  animate={{ y: isMobile ? "-10vw" : "-27.75vw", opacity: 1 }}
                   exit={{ y: isMobile ? "0vw" : "-100vw", opacity: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="absolute left-[0vw] md:left-1/4 transform md:-translate-x-1/2 max-w-[120vw] md:max-w-[30vw] text-center md:text-left text-[4vw] md:text-[1.5vw] font-semibold text-black"
+                  className="absolute left-[4.2vw] md:left-1/4 transform md:-translate-x-1/2 max-w-[120vw] md:max-w-[30vw] mt-[10vw] md:mt-[0vw] text-center md:text-left text-[4vw] md:text-[1.5vw] font-semibold text-black"
                 >
-                  <p>
+                  <div className="mb-[7vw]">
+                    <a
+                      href="#"
+                      onClick={() => setIsHidden(false)}
+                      className="text-[4vw] md:text-[1vw] border-[0.1vw] border-black px-[5vw] md:px-[1.25vw] py-[2.5vw] md:py-[0.75vw] rounded-full hover:bg-black hover:text-white hover:border-white transition font-normal"
+                    >
+                      &#129128; Back Home
+                    </a>
+                  </div>
+                  <p className="text-[0vw] md:text-[1.5vw]">
                     I thrive on turning ideas into high-performance, cleanly
                     architected applications.
                     <br />
@@ -158,14 +167,14 @@ export default function Hero() {
 
                 <motion.div
                   initial={{ y: isMobile ? "-131vw" : "-150vw", opacity: 0 }}
-                  animate={{ y: isMobile ? "-123vw" : "-27.7vw", opacity: 1 }}
+                  animate={{ y: isMobile ? "-123vw" : "-28.5vw", opacity: 1 }}
                   exit={{ y: isMobile ? "-131vw" : "-100vw", opacity: 0 }}
                   transition={{
                     duration: 0.8,
                     delay: isMobile ? 0 : 0.2,
                     ease: "easeOut",
                   }}
-                  className="absolute right-[0vw] md:right-1/4 md:translate-x-7/13 w-[85vw] md:w-[35vw] h-[100vw] md:h-[35vw] bg-black p-[3vw] md:p-[1vw] grid grid-cols-3 auto-rows-auto gap-[1.5vw] md:gap-[0.75vw] overflow-auto rounded-[3vw] md:rounded-[1vw] shadow-[0_0.4vw_0.6vw_rgba(0,0,0,0.25)]"
+                  className="absolute right-[0vw] md:right-[26.8vw] md:translate-x-7/13 w-[85vw] md:w-[35vw] h-[100vw] md:h-[35vw] mt-[10vw] md:mt-[0vw] bg-black p-[3vw] md:p-[1vw] grid grid-cols-3 auto-rows-auto gap-[1.5vw] md:gap-[0.75vw] overflow-auto rounded-[3vw] md:rounded-[1vw] shadow-[0_0.4vw_0.6vw_rgba(0,0,0,0.25)]"
                 >
                   {[
                     {

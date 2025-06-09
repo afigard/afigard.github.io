@@ -50,7 +50,7 @@ export default function Projects() {
             href="#"
             className="text-[4vw] md:text-[1vw] border-[0.1vw] border-black px-[5vw] md:px-[1.25vw] py-[2.5vw] md:py-[0.75vw] rounded-full hover:bg-black hover:text-white hover:border-white transition"
           >
-            Back Home &#129132;
+            &#129132; Back Up
           </a>
         </div>
 
@@ -96,7 +96,7 @@ export default function Projects() {
                 <img
                   src={image}
                   alt={title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 border-t-[0.1vw] border-gray-100 md:border-none"
                 />
               </div>
             </div>
