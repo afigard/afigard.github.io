@@ -80,6 +80,7 @@ export default function Hero() {
 
       <div className="h-full w-full px-[8vw] md:px-[4vw] flex flex-col items-center justify-center text-center space-y-[8vw] md:space-y-[2vw] md:space-y-[1vw]">
         <motion.h1
+          initial={{ opacity: 0 }}
           animate={
             isHidden
               ? {
@@ -101,10 +102,26 @@ export default function Hero() {
         </motion.h1>
 
         <motion.button
+          initial={{ opacity: 0 }}
+          animate={
+            isHidden
+              ? {
+                  opacity: 0,
+                  transition: isMobile ? { duration: 0.1 } : { duration: 0.4 },
+                }
+              : {
+                  opacity: 1,
+                  transition: isMobile
+                    ? { duration: 0.8, delay: 0.4 }
+                    : { duration: 0.8 },
+                }
+          }
           onClick={() => setIsHidden(true)}
-          className="text-[10vw] md:text-[3vw] font-bold text-black cursor-pointer hover:text-amber-600 transition"
+          className={`text-[10vw] md:text-[3vw] font-bold text-black transition hover:text-amber-600 cursor-pointer ${
+            isHidden ? "pointer-events-none" : ""
+          }`}
         >
-          {isHidden ? "\u00A0" : "+"}
+          +
         </motion.button>
 
         <div className="relative w-full">
