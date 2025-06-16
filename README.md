@@ -1,16 +1,16 @@
-# **Portfolio Website**
+# **Portfolio**
 
-This portfolio website serves as a platform to display my projects, experiences, and skills.
+This portfolio website serves as a platform to display my work.
 
 ## **Features**
 
-- Responsive design
 - Project showcases
+- Skills showcases
 - Contact information
-- Dark and light themes
+- Responsiveness
 
 ## **Snapshots**
 
-![Snapshot 1](public/portfolio-snapshot-1.png)
-![Snapshot 2](public/portfolio-snapshot-2.png)
-![Snapshot 3](public/portfolio-snapshot-3.png)
+![Snapshot 1](public/snapshot1.png)
+![Snapshot 2](public/snapshot2.png)
+![Snapshot 3](public/snapshot3.png)
