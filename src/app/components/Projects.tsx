@@ -84,7 +84,7 @@ export default function Projects() {
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-[8vw] md:mt-[2vw] text-[4vw] md:text-[0.75vw] text-amber-600 hover:underline w-fit inline-flex items-center gap-[0.5vw]"
+                    className="mt-[8vw] md:mt-[2vw] text-[4vw] md:text-[0.75vw] text-lime-600 hover:underline w-fit inline-flex items-center gap-[0.5vw]"
                   >
                     <FiGithub className="text-base text-[4vw] md:text-[0.75vw] mr-[2vw] md:mr-[0vw] mt-[0.5vw] md:mt-[0vw]" />
                     View on GitHub &#129122;

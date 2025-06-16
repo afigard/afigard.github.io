@@ -120,7 +120,7 @@ export default function Hero() {
                 }
           }
           onClick={() => setIsHidden(true)}
-          className={`text-[10vw] md:text-[3vw] font-bold text-black transition hover:text-amber-600 cursor-pointer ${
+          className={`text-[10vw] md:text-[3vw] font-bold text-black transition hover:text-lime-600 cursor-pointer ${
             isHidden ? "pointer-events-none" : ""
           }`}
         >
@@ -159,14 +159,14 @@ export default function Hero() {
                   <div className="flex flex-wrap justify-center md:justify-start gap-[3vw] md:gap-[1vw] mt-[7vw] md:mt-[7.9vw] text-[4vw] md:text-[1vw]">
                     <a
                       href="mailto:adrien.figard@gmail.com"
-                      className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
+                      className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-lime-600 hover:text-white hover:border-white transition"
                     >
                       <FaEnvelope className="mr-[0.5vw]" />
                       <span>Email</span>
                     </a>
                     <a
                       href="https://github.com/afigard"
-                      className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
+                      className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-lime-600 hover:text-white hover:border-white transition"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -175,7 +175,7 @@ export default function Hero() {
                     </a>
                     <a
                       href="https://www.malt.fr/profile/afigard"
-                      className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-amber-600 hover:text-white hover:border-white transition"
+                      className="inline-flex items-center border-[0.15vw] border-black px-[4vw] md:px-[1.3vw] py-[2vw] md:py-[0.75vw] rounded-full hover:bg-lime-600 hover:text-white hover:border-white transition"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -264,7 +264,7 @@ export default function Hero() {
                   ].map(({ tech, icon, desc, span }) => (
                     <motion.div
                       key={tech}
-                      className={`bg-white text-black rounded-[2vw] md:rounded-[0.5vw] p-[1vw] flex flex-col justify-center ${span} hover:scale-103 hover:bg-amber-50 transition-transform`}
+                      className={`bg-white text-black rounded-[2vw] md:rounded-[0.5vw] p-[1vw] flex flex-col justify-center ${span} hover:scale-103 hover:bg-lime-50 transition-transform`}
                     >
                       <div className="text-[3vw] md:text-[1vw] font-bold">
                         {icon}
