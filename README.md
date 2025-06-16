@@ -1,4 +1,4 @@
-# **Portfolio Website**
+# **Portfolio**
 
 This portfolio website serves as a platform to display my work.
 
