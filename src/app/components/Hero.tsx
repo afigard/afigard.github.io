@@ -81,7 +81,7 @@ export default function Hero() {
         )}
       </AnimatePresence>
 
-      <div className="h-full w-full px-[8vw] md:px-[4vw] flex flex-col items-center justify-center text-center space-y-[8vw] md:space-y-[2vw] md:space-y-[1vw]">
+      <div className="h-full w-full px-[8vw] md:px-[4vw] flex flex-col items-center justify-center text-center space-y-[8vw] md:space-y-[3vw]">
         <motion.h1
           initial={{ opacity: 0 }}
           animate={
@@ -120,11 +120,11 @@ export default function Hero() {
                 }
           }
           onClick={() => setIsHidden(true)}
-          className={`text-[10vw] md:text-[3vw] font-bold text-black transition hover:text-lime-600 cursor-pointer ${
+          className={`text-[6vw] md:text-[1.5vw] font-bold text-black transition hover:text-lime-600 cursor-pointer underline ${
             isHidden ? "pointer-events-none" : ""
           }`}
         >
-          +
+          More About Me &#129130;
         </motion.button>
 
         <div className="relative w-full">
